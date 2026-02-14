@@ -1,0 +1,111 @@
+import { Helmet } from 'react-helmet-async';
+
+import { ArrowRight } from 'lucide-react';
+
+const blogPosts = [
+    {
+        id: 1,
+        title: 'The Future of AI in SaaS: Trends to Watch in 2024',
+        category: 'AI Trends',
+        excerpt: 'Discover how Large Language Models and autonomous agents are reshaping the SaaS landscape and what founders need to know to stay ahead.',
+        date: 'Oct 15, 2023',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop' // AI/Futuristic
+    },
+    {
+        id: 2,
+        title: 'Scaling from MVP to Enterprise: A Technical Roadmap',
+        category: 'Engineering',
+        excerpt: 'Avoid common pitfalls when transitioning from a prototype to a high-availability production system serving thousands of users.',
+        date: 'Sep 28, 2023',
+        readTime: '8 min read',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop' // Scaling/Dashboard
+    },
+    {
+        id: 3,
+        title: 'Why Dedicated Teams Outperform Freelancers for Startups',
+        category: 'Team Building',
+        excerpt: 'An in-depth comparison of hiring models and why dedicated engineering teams offer better long-term value and velocity.',
+        date: 'Sep 10, 2023',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop' // Team collaboration
+    },
+    {
+        id: 4,
+        title: 'React vs. Vue: Choosing the Right Framework for your MVP',
+        category: 'Development',
+        excerpt: 'A pragmatic guide to selecting the frontend framework that aligns with your product goals and talent pool availability.',
+        date: 'Aug 22, 2023',
+        readTime: '7 min read',
+        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop' // Coding/React
+    },
+    {
+        id: 5,
+        title: 'Optimizing Cloud Costs for High-Growth Startups',
+        category: 'Cloud Infrastructure',
+        excerpt: 'Practical strategies to keep your AWS or Google Cloud bills in check without compromising on performance or reliability.',
+        date: 'Aug 05, 2023',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop' // Cloud/Server
+    },
+    {
+        id: 6,
+        title: 'UX Best Practices for B2B SaaS Platforms',
+        category: 'Design',
+        excerpt: 'How to design complex interfaces that feel intuitive and drive user adoption in enterprise software environments.',
+        date: 'Jul 18, 2023',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1586717791821-3f44a5638d48?q=80&w=2070&auto=format&fit=crop' // UX/Design
+    }
+];
+
+export default function Blog() {
+    return (
+        <>
+            <Helmet>
+                <title>SaaS & AI Insights | Agency Blog</title>
+                <meta name="description" content="Read our latest thoughts on SaaS development, AI integration, and startup growth strategies." />
+            </Helmet>
+
+            <div className="pt-32 pb-20 bg-white dark:bg-zinc-950 min-h-screen transition-colors duration-300">
+                <div className="container mx-auto px-4 md:px-6">
+                    <h1 className="text-4xl font-bold text-zinc-900 dark:text-white mb-12 text-center">Latest Insights</h1>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {blogPosts.map((post) => (
+                            <div key={post.id} className="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all bg-white dark:bg-zinc-900 duration-300 group">
+                                <div className="h-48 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-violet-900/10 group-hover:bg-transparent transition-colors z-10" />
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute top-4 left-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur text-xs font-bold text-violet-600 dark:text-violet-400 px-3 py-1.5 rounded-full uppercase tracking-wider z-20">
+                                        {post.category}
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <div className="flex items-center text-xs text-zinc-500 dark:text-zinc-500 mb-3 space-x-2">
+                                        <span>{post.date}</span>
+                                        <span>•</span>
+                                        <span>{post.readTime}</span>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-2">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4 line-clamp-3 leading-relaxed">
+                                        {post.excerpt}
+                                    </p>
+                                    <a href="#" className="inline-flex items-center text-violet-600 dark:text-violet-400 font-bold text-sm hover:text-violet-700 dark:hover:text-violet-300 transition-colors">
+                                        Read Article <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
