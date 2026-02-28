@@ -3,7 +3,10 @@ import { Twitter, Linkedin, ArrowRight, Shield, Code2, CreditCard, Star, Sparkle
 import { motion } from 'framer-motion';
 
 const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
-
+const SOCIAL_MEDIA = [
+    { name: 'Twitter', href: import.meta.env.VITE_TWITTER_LINK || 'https://twitter.com/zyentric', icon: Twitter },
+    { name: 'Linkedin', href: import.meta.env.VITE_LINKEDIN_LINK || 'https://www.linkedin.com/company/zyentric/', icon: Linkedin },
+]
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -39,16 +42,20 @@ export default function Footer() {
                             We architect high-fidelity SaaS products for the next generation of founders. Elite engineering, accelerated.
                         </p>
                         <div className="flex gap-4">
-                            {[Twitter, Linkedin].map((Icon, i) => (
-                                <motion.a
-                                    key={i}
-                                    href="#"
-                                    whileHover={{ y: -3, scale: 1.1 }}
-                                    className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white transition-colors hover:border-violet-500/50"
-                                >
-                                    <Icon className="w-5 h-5" />
-                                </motion.a>
-                            ))}
+                            {SOCIAL_MEDIA.map((social, i) => {
+                                const Icon = social.icon;
+                                return (
+                                    <motion.a
+                                        key={i}
+                                        href={social.href}
+                                        whileHover={{ y: -3, scale: 1.1 }}
+                                        target="_blank"
+                                        className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white transition-colors hover:border-violet-500/50"
+                                    >
+                                        <Icon className="w-5 h-5" />
+                                    </motion.a>
+                                );
+                            })}
                         </div>
                     </div>
 
