@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Twitter, Linkedin, Github, ArrowRight, Shield, Code2, CreditCard, Star, Sparkles } from 'lucide-react';
+import { Twitter, Linkedin, ArrowRight, Shield, Code2, CreditCard, Star, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';

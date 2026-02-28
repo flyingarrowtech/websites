@@ -1,7 +1,7 @@
 
 import { Code2, Rocket, BrainCircuit, Users, Database, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const services = [
     {
