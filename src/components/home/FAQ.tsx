@@ -1,10 +1,7 @@
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { gsap, ScrollTrigger } from 'gsap/all';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
     {
@@ -31,49 +28,54 @@ const faqs = [
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-    const containerRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top 75%',
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.1
             }
-        });
+        }
+    };
 
-        tl.from('.faq-header', {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out'
-        })
-            .from('.faq-item', {
-                y: 20,
-                opacity: 0,
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
                 duration: 0.6,
-                stagger: 0.1,
-                ease: 'power2.out'
-            }, '-=0.4');
-
-    }, { scope: containerRef });
+                ease: "easeOut" as const
+            }
+        }
+    };
 
     return (
-        <section ref={containerRef} className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
-            <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-                <div className="text-center mb-16 faq-header">
-                    <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
+        <section className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
+            <motion.div
+                className="container mx-auto px-4 md:px-6 max-w-3xl"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+            >
+                <div className="text-center mb-16">
+                    <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
                         Frequently Asked Questions
-                    </h2>
-                    <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                    </motion.h2>
+                    <motion.p variants={itemVariants} className="text-lg text-zinc-600 dark:text-zinc-400">
                         Everything you need to know about working with us.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="faq-item bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-violet-400 dark:hover:border-violet-600 shadow-sm hover:shadow-md dark:shadow-zinc-900/50"
+                            variants={itemVariants}
+                            className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-violet-400 dark:hover:border-violet-600 shadow-sm hover:shadow-md dark:shadow-zinc-900/50"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -86,17 +88,25 @@ export default function FAQ() {
                                     <ChevronDown className="w-5 h-5 text-zinc-400 group-hover:text-violet-500 transition-colors" />
                                 )}
                             </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                            >
-                                <div className="px-6 pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-zinc-100 dark:border-zinc-800 pt-4">
-                                    {faq.answer}
-                                </div>
-                            </div>
-                        </div>
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="overflow-hidden"
+                                    >
+                                        <div className="px-6 pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-zinc-100 dark:border-zinc-800 pt-4">
+                                            {faq.answer}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

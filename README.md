@@ -111,7 +111,7 @@ agency-website/
 - **Case Studies** - Portfolio of completed projects
 - **Blog** - Latest insights on SaaS and AI trends
 - **Careers** - Job listings with search and filter
-- **Contact** - Calendly integration for booking calls
+- **Contact** - Professional contact form for inquiries
 
 ## 🚀 Performance Optimizations
 
@@ -184,6 +184,4 @@ For inquiries, please reach out:
 - **Location:** Semari, Marihan, Mirzapur, India
 - **Website:** [https://flyingarrowtech.github.io/website/](https://flyingarrowtech.github.io/website/)
 
----
 
-**Note:** Replace `https://calendly.com/d/demo/30min` in `Contact.tsx` with your actual Calendly URL before deploying.

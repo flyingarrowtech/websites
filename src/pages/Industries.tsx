@@ -29,12 +29,14 @@ const industries = [
     },
 ];
 
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
+
 export default function Industries() {
     return (
         <>
             <Helmet>
-                <title>Industries We Serve - Agency</title>
-                <meta name="description" content="Specialized software development for FinTech, HealthTech, EdTech, and E-commerce startups." />
+                <title>Specialized Industries | {COMPANY_NAME} Expertise</title>
+                <meta name="description" content={`${COMPANY_NAME} delivers deep domain expertise in FinTech, HealthTech, EdTech, and E-commerce. We build high-performance, compliant software for modern industries.`} />
             </Helmet>
 
             <section className="bg-zinc-50 dark:bg-zinc-950 pt-32 pb-20 transition-colors duration-300">

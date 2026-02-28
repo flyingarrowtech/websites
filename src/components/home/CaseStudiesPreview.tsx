@@ -1,14 +1,11 @@
 
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useRef } from 'react';
-import { gsap, ScrollTrigger } from 'gsap/all';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from 'framer-motion';
 
 const caseStudies = [
     {
+        id: 'fintech-dashboard',
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71', // Dashboard/Data visualization
         title: 'FinTech Dashboard Scaling',
         category: 'SaaS Development',
@@ -16,13 +13,15 @@ const caseStudies = [
         metricLabel: 'Performance',
     },
     {
-        image: 'https://images.unsplash.com/photo-1576091160550-2187d80a1a44', // Medical/Tech interface
+        id: 'health-ai',
+        image: 'https://media.istockphoto.com/id/1961399015/photo/medical-technology-doctor-use-ai-robots-for-diagnosis-care-and-increasing-accuracy-patient.jpg?s=612x612&w=0&k=20&c=V5W7NpDm70Fpo89NUPraIJwTmj7qGL1FwaVLaDnbYXk=', // Medical/Tech interface
         title: 'HealthTech AI Diagnostic Tool',
         category: 'AI Integration',
         metric: '98% Accuracy',
         metricLabel: 'Model Precision',
     },
     {
+        id: 'ecommerce-scale',
         image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad', // Alternative Shopping/Payment image
         title: 'Global E-commerce Revamp',
         category: 'Dedicated Team',
@@ -32,36 +31,40 @@ const caseStudies = [
 ];
 
 export default function CaseStudiesPreview() {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top 75%',
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.2
             }
-        });
+        }
+    };
 
-        tl.from('.case-study-header', {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out'
-        })
-            .from('.case-study-card', {
-                y: 50,
-                opacity: 0,
+    const headerVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
                 duration: 0.8,
-                stagger: 0.2,
-                ease: 'power3.out'
-            }, '-=0.4');
+                ease: "easeOut" as const
+            }
+        }
+    };
 
-    }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="case-study-header flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <section className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
+            <motion.div
+                className="container mx-auto px-4 md:px-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={containerVariants}
+            >
+                <motion.div variants={headerVariants} className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div className="max-w-2xl">
                         <span className="text-violet-600 dark:text-violet-400 font-semibold tracking-wide uppercase text-sm mb-2 block">Proven Results</span>
                         <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white">
@@ -71,11 +74,15 @@ export default function CaseStudiesPreview() {
                     <Link to="/case-studies" className="hidden md:inline-flex items-center text-violet-600 dark:text-violet-400 font-semibold hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
                         View All Case Studies <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {caseStudies.map((study, index) => (
-                        <div key={index} className="case-study-card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:shadow-2xl dark:hover:shadow-violet-900/20 transition-all duration-300 hover:-translate-y-1">
+                        <Link
+                            key={index}
+                            to={`/case-studies/${study.id}`}
+                            className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:shadow-2xl dark:hover:shadow-violet-900/20 transition-all duration-300 hover:-translate-y-1 group block"
+                        >
                             <div className="aspect-video overflow-hidden bg-zinc-200 dark:bg-zinc-800 relative">
                                 <div className="absolute inset-0 bg-violet-900/10 group-hover:bg-transparent transition-colors z-10" />
                                 <img
@@ -96,7 +103,7 @@ export default function CaseStudiesPreview() {
                                     <p className="text-2xl font-bold text-violet-600 dark:text-violet-400">{study.metric}</p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
@@ -105,7 +112,7 @@ export default function CaseStudiesPreview() {
                         View All Case Studies <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

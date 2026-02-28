@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import ThemeToggle from '../ui/ThemeToggle';
 
-const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Agency';
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,16 +15,13 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
+  // Mobile menu is closed via individual link click handlers
 
   const navLinks = [
     { name: 'Services', path: '/services' },
@@ -39,98 +36,137 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-zinc-200 dark:border-zinc-800 py-3 shadow-sm'
-          : 'bg-transparent border-transparent py-5'
+          ? 'py-3'
+          : 'py-6'
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-violet-500/30">
-            {COMPANY_NAME.charAt(0)}
-          </div>
-          <span className="font-bold text-xl tracking-tight text-zinc-900 dark:text-white">
-            {COMPANY_NAME}<span className="text-violet-500">.</span>
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={clsx(
-                'text-sm font-medium transition-colors hover:text-violet-600 dark:hover:text-violet-400',
-                location.pathname === link.path
-                  ? 'text-violet-600 dark:text-violet-400 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white transition-all rounded-full focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 hover:-translate-y-0.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:to-fuchsia-700 shadow-lg shadow-violet-500/20"
-          >
-            Start Project
-            <ArrowRight className="w-4 h-4 ml-2" />
+      <div className="container mx-auto px-4 md:px-6">
+        <div className={clsx(
+          'flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 border',
+          isScrolled
+            ? 'glass dark:glass-dark shadow-xl shadow-violet-500/5'
+            : 'bg-transparent border-transparent'
+        )}>
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative group-hover:scale-105 transition-all duration-300">
+              <img
+                src="/logo.png"
+                alt={`${COMPANY_NAME} Logo`}
+                className="h-12 md:h-14 w-auto object-contain filter drop-shadow-lg"
+                onError={(e) => {
+                  // Fallback if logo.png is missing
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement!;
+                  parent.classList.add('w-10', 'h-10', 'bg-gradient-to-br', 'from-violet-600', 'to-fuchsia-600', 'flex', 'items-center', 'justify-center', 'text-white', 'font-bold', 'rounded-xl');
+                  parent.innerHTML = COMPANY_NAME.charAt(0);
+                }}
+              />
+            </div>
+            <span className="text-2xl md:text-3xl font-black tracking-tighter text-zinc-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+              {COMPANY_NAME}
+            </span>
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-zinc-600 dark:text-zinc-300 hover:text-violet-600 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1 p-1 bg-zinc-100/50 dark:bg-zinc-900/50 rounded-full border border-zinc-200/50 dark:border-zinc-800/50">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={clsx(
+                    'text-sm font-medium px-4 py-2 rounded-full transition-all relative group',
+                    isActive
+                      ? 'text-violet-600 dark:text-violet-400 bg-white dark:bg-zinc-800 shadow-sm'
+                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                  )}
+                >
+                  {link.name}
+                  {!isActive && (
+                    <motion.span
+                      className="absolute bottom-1 left-4 right-4 h-0.5 bg-violet-600/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-center"
+                      layoutId="nav-underline"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:block">
+              <ThemeToggle />
+            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-fuchsia-600 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 active:scale-95"
+            >
+              Start Project
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 text-zinc-600 dark:text-zinc-300 hover:text-violet-600 transition-all active:scale-90"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
+                    <X className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
+                    <Menu className="w-6 h-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden absolute top-full left-4 right-4 mt-2 glass dark:glass-dark rounded-2xl shadow-2xl p-4 border border-zinc-200 dark:border-zinc-800 overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={clsx(
-                    'text-base font-medium py-2 px-4 rounded-lg transition-colors',
+                    'text-base font-semibold py-3 px-4 rounded-xl transition-all',
                     location.pathname === link.path
-                      ? 'bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400'
-                      : 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900'
+                      ? 'bg-violet-600 text-white'
+                      : 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="px-4 py-2 flex items-center justify-between border-t border-zinc-100 dark:border-zinc-800 mt-2 pt-4">
-                <span className="text-zinc-600 dark:text-zinc-300 font-medium">Appearance</span>
+              <div className="flex items-center justify-between p-4 border-t border-zinc-100 dark:border-zinc-800 mt-2">
+                <span className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Theme</span>
                 <ThemeToggle />
               </div>
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 w-full inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-white transition-all rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:to-fuchsia-700 shadow-lg"
+                className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white transition-all rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600"
               >
-                Start Project
+                Let's Talk
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>

@@ -1,12 +1,15 @@
 import { Helmet } from 'react-helmet-async';
-// import { InlineWidget } from 'react-calendly';
+import { Link } from 'react-router-dom';
+import { MessageSquare, ArrowRight } from 'lucide-react';
 
 export default function BookCall() {
+    const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
+
     return (
         <>
             <Helmet>
-                <title>Book a Strategy Call | Agency</title>
-                <meta name="description" content="Schedule a free consultation with our SaaS experts to discuss your project." />
+                <title>Book a Strategy Call | {COMPANY_NAME}</title>
+                <meta name="description" content={`Schedule a free consultation with ${COMPANY_NAME}'s SaaS experts to discuss your technical roadmap and scaling strategy.`} />
             </Helmet>
 
             <div className="pt-32 pb-20 bg-zinc-50 dark:bg-zinc-950 min-h-screen transition-colors duration-300">
@@ -19,15 +22,21 @@ export default function BookCall() {
                             </p>
                         </div>
 
-                        <div className="p-6 h-[700px]">
-                            {/* Note: In a real implementation, you would need to install react-calendly or use an iframe */}
-                            {/* For now, we will use a placeholder or assume the package is available/mocked */}
-                            <div className="w-full h-full flex items-center justify-center bg-zinc-50 dark:bg-zinc-800 rounded-lg border border-dashed border-zinc-300 dark:border-zinc-700 transition-colors">
-                                <div className="text-center">
-                                    <p className="text-zinc-500 font-medium">Calendly Widget Area</p>
-                                    <p className="text-xs text-zinc-400 mt-2">(Install react-calendly to render actual widget)</p>
-                                </div>
+                        <div className="p-12 text-center">
+                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 mb-8">
+                                <MessageSquare className="w-10 h-10" />
                             </div>
+                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Ready to get started?</h2>
+                            <p className="text-zinc-600 dark:text-zinc-400 mb-8 max-w-md mx-auto">
+                                We've moved our booking process to a direct inquiry system to better serve our clients. Please fill out our contact form, and we'll reach out to schedule your call.
+                            </p>
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-lg transition-all group"
+                            >
+                                Contact Us to Schedule
+                                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -6,13 +6,16 @@ import Differentiation from '../components/home/Differentiation';
 import CaseStudiesPreview from '../components/home/CaseStudiesPreview';
 import FAQ from '../components/home/FAQ';
 import CTA from '../components/home/CTA';
+import PageTransition from '../components/ui/PageTransition';
+
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
 
 export default function Home() {
     return (
-        <>
+        <PageTransition>
             <Helmet>
-                <title>Agency - Modern SaaS & AI Development</title>
-                <meta name="description" content="We help ambitious startups design, develop, and scale SaaS products using modern web technologies and AI integration. Focus on growth while we handle the tech." />
+                <title>{COMPANY_NAME} - Premium SaaS & AI Development</title>
+                <meta name="description" content={`${COMPANY_NAME} helps ambitious startups design, develop, and scale high-fidelity SaaS products using modern web technologies and AI integration. Elite engineering, accelerated.`} />
             </Helmet>
 
             <Hero />
@@ -22,6 +25,6 @@ export default function Home() {
             <CaseStudiesPreview />
             <FAQ />
             <CTA />
-        </>
+        </PageTransition>
     );
 }

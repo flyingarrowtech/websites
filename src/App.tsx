@@ -24,6 +24,7 @@ const BookCall = lazy(() => import('./pages/BookCall'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
 const NdaRequest = lazy(() => import('./pages/NdaRequest'));
 const Careers = lazy(() => import('./pages/Careers'));
+const JobDetail = lazy(() => import('./pages/JobDetail'));
 
 const App = () => {
   return (
@@ -47,8 +48,9 @@ const App = () => {
                 <Route path="/book-call" element={<BookCall />} />
                 <Route path="/thank-you" element={<ThankYou />} />
                 <Route path="/request-nda" element={<NdaRequest />} />
-                <Route path="/type" element={<Legal />} />
+                <Route path="/legal/:type" element={<Legal />} />
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/careers/:id" element={<JobDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

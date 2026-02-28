@@ -37,12 +37,14 @@ const caseStudies = [
     },
 ];
 
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
+
 export default function CaseStudies() {
     return (
         <>
             <Helmet>
-                <title>Case Studies - Agency</title>
-                <meta name="description" content="View our portfolio of successful projects for startups in FinTech, HealthTech, and more." />
+                <title>Case Studies - {COMPANY_NAME}</title>
+                <meta name="description" content={`Discover how ${COMPANY_NAME} transforms technical challenges into competitive advantages through our portfolio of SaaS and AI success stories.`} />
             </Helmet>
 
             <section className="bg-zinc-50 dark:bg-zinc-950 pt-32 pb-20 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
@@ -60,7 +62,7 @@ export default function CaseStudies() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {caseStudies.map((study) => (
-                            <div key={study.id} className="group cursor-pointer">
+                            <Link key={study.id} to={`/case-studies/${study.id}`} className="group">
                                 <div className="bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
                                     <img
                                         src={study.image}
@@ -89,7 +91,7 @@ export default function CaseStudies() {
                                         ))}
                                     </ul>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

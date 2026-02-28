@@ -59,6 +59,50 @@
   --color-text-dark: var(--color-zinc-50);
 }
 
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-zinc-950/80 backdrop-blur-xl border border-zinc-800/50;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+  }
+
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0px rgba(124, 58, 237, 0); }
+    50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+  }
+}
+
 @layer base {
   body {
     @apply font-sans antialiased text-zinc-900 bg-white dark:text-zinc-50 dark:bg-zinc-950 transition-colors duration-300 selection:bg-violet-500/30;

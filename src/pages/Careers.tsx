@@ -1,64 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-import { Search, MapPin, Clock, ArrowRight, Briefcase, Filter } from 'lucide-react';
+import { Search, Clock, ArrowRight, Briefcase, Filter, Sparkles, Zap, Globe, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { jobs } from '../data/jobs';
 
-const jobs = [
-    {
-        id: 1,
-        title: 'Senior Full Stack Engineer',
-        department: 'Engineering',
-        location: 'Remote (India)',
-        type: 'Full-time',
-        tags: ['React', 'Node.js', 'TypeScript', 'AWS'],
-        description: 'We are looking for a Senior Full Stack Engineer to lead our core product team. You will be responsible for architecting scalable solutions and mentoring junior developers.',
-    },
-    {
-        id: 2,
-        title: 'React Native Developer',
-        department: 'Mobile',
-        location: 'Remote (India)',
-        type: 'Contract',
-        tags: ['React Native', 'iOS', 'Android', 'Redux'],
-        description: 'Join our mobile team to build high-performance cross-platform applications. Experience with native modules and performance optimization is a plus.',
-    },
-    {
-        id: 3,
-        title: 'UX/UI Designer',
-        department: 'Design',
-        location: 'Remote (India)',
-        type: 'Full-time',
-        tags: ['Figma', 'Prototyping', 'Design Systems'],
-        description: 'Create intuitive and visually stunning user experiences for our enterprise SaaS clients. You will work closely with product managers and engineers.',
-    },
-    {
-        id: 4,
-        title: 'DevOps Engineer',
-        department: 'Infrastructure',
-        location: 'Remote (India)',
-        type: 'Full-time',
-        tags: ['Kubernetes', 'Docker', 'CI/CD', 'Terraform'],
-        description: 'Help us build and maintain our cloud infrastructure. You will be automating deployment pipelines and ensuring high availability.',
-    },
-    {
-        id: 5,
-        title: 'Project Manager',
-        department: 'Management',
-        location: 'Remote (India)',
-        type: 'Full-time',
-        tags: ['Agile', 'Scrum', 'Client Relations'],
-        description: 'Oversee project timelines and deliverables. You will be the primary point of contact for our key clients and ensure their success.',
-    },
-    {
-        id: 6,
-        title: 'Marketing Specialist',
-        department: 'Marketing',
-        location: 'Remote (India)',
-        type: 'Part-time',
-        tags: ['SEO', 'Content Marketing', 'Social Media'],
-        description: 'Drive our inbound marketing strategy. You will create compelling content and manage our social media channels to generate leads.',
-    },
-];
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
 
 export default function Careers() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -76,39 +23,49 @@ export default function Careers() {
     });
 
     return (
-        <>
+        <div className="bg-white dark:bg-zinc-950 transition-colors duration-500 min-h-screen pb-20 pt-40 overflow-hidden relative">
             <Helmet>
-                <title>Careers - Join Our Team</title>
-                <meta name="description" content="Join our team of passionate problem solvers. View our open positions and help us build the future of SaaS." />
+                <title>Careers | Join {COMPANY_NAME} - Elite Engineering Force</title>
+                <meta name="description" content={`Join the elite engineering task force at ${COMPANY_NAME}. We're looking for visionary builders to architect the next generation of SaaS excellence.`} />
             </Helmet>
 
-            {/* Hero Section */}
-            <section className="pt-32 pb-20 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6">
-                        Build the <span className="text-violet-600 dark:text-violet-400">Future</span> With Us
-                    </h1>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-12">
-                        We're on a mission to empower startups with world-class engineering.
-                        If you're passionate about code, design, and innovation, we want to hear from you.
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
+                <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+            </div>
+
+            <div className="container relative mx-auto px-4 md:px-6 z-10">
+                {/* Hero Section */}
+                <div className="max-w-4xl mx-auto text-center mb-24">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-violet-200 dark:border-violet-800"
+                    >
+                        <Zap className="w-3 h-3" />
+                        Join the Elite
+                    </motion.div>
+                    <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">Engineers of <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Legend.</span></h1>
+                    <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed max-w-2xl mx-auto mb-12">
+                        We don't just hire; we assemble visionaries. Help us architect the next generation of SaaS excellence.
                     </p>
 
                     {/* Search & Filter */}
-                    <div className="max-w-3xl mx-auto bg-white dark:bg-zinc-900 p-4 rounded-2xl shadow-xl shadow-violet-500/5 border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row gap-4">
+                    <div className="max-w-3xl mx-auto glass dark:glass-dark p-3 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row gap-3 shadow-2xl shadow-violet-500/10">
                         <div className="flex-1 relative">
-                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
+                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                             <input
                                 type="text"
-                                placeholder="Search roles, skills, or keywords..."
-                                className="w-full pl-12 pr-4 py-3 bg-zinc-50 dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-violet-500 dark:text-white placeholder-zinc-500 transition-all font-medium"
+                                placeholder="Search roles or skills..."
+                                className="w-full pl-14 pr-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-violet-500 dark:text-white placeholder-zinc-500 transition-all font-bold text-sm"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                         </div>
-                        <div className="relative md:w-48">
-                            <Filter className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
+                        <div className="relative md:w-56">
+                            <Filter className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                             <select
-                                className="w-full pl-12 pr-4 py-3 bg-zinc-50 dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-violet-500 dark:text-white font-medium appearance-none cursor-pointer"
+                                className="w-full pl-14 pr-10 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-violet-500 dark:text-white font-bold text-sm appearance-none cursor-pointer"
                                 value={selectedDepartment}
                                 onChange={(e) => setSelectedDepartment(e.target.value)}
                             >
@@ -119,99 +76,99 @@ export default function Careers() {
                         </div>
                     </div>
                 </div>
-            </section>
 
-            {/* Job Listings */}
-            <section className="py-20 bg-white dark:bg-zinc-950 min-h-screen transition-colors duration-300">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="flex justify-between items-end mb-8">
-                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                                Open Positions <span className="text-zinc-400 dark:text-zinc-600 ml-2 text-lg font-normal">({filteredJobs.length})</span>
-                            </h2>
-                        </div>
+                {/* Job Listings */}
+                <div className="max-w-4xl mx-auto">
+                    <div className="flex justify-between items-center mb-10 px-4">
+                        <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-500">
+                            Available Directives <span className="text-violet-500 ml-2">[{filteredJobs.length}]</span>
+                        </h2>
+                    </div>
 
-                        {filteredJobs.length > 0 ? (
-                            <div className="space-y-6">
-                                {filteredJobs.map((job) => (
-                                    <div key={job.id} className="group bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-violet-500/30 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300 cursor-pointer">
-                                        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
-                                            <div>
-                                                <div className="flex flex-wrap items-center gap-3 mb-3">
-                                                    <span className="bg-violet-100 dark:bg-violet-500/10 text-violet-700 dark:text-violet-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                                                        {job.department}
-                                                    </span>
-                                                    <span className="flex items-center text-zinc-500 dark:text-zinc-400 text-sm font-medium">
-                                                        <MapPin className="w-4 h-4 mr-1" /> {job.location}
-                                                    </span>
-                                                    <span className="flex items-center text-zinc-500 dark:text-zinc-400 text-sm font-medium">
-                                                        <Clock className="w-4 h-4 mr-1" /> {job.type}
-                                                    </span>
+                    <div className="space-y-6">
+                        <AnimatePresence mode="popLayout">
+                            {filteredJobs.length > 0 ? (
+                                filteredJobs.map((job, idx) => (
+                                    <Link key={job.id} to={`/careers/${job.id}`}>
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, scale: 0.95 }}
+                                            transition={{ delay: idx * 0.05 }}
+                                            className="my-10 group glass dark:glass-dark border border-zinc-100 dark:border-zinc-800 rounded-[2.5rem] p-8 md:p-10 hover:border-violet-500/30 hover:shadow-2xl hover:shadow-violet-500/5 transition-all duration-500 cursor-pointer relative"
+                                        >
+                                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
+                                                <div className="flex-1">
+                                                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                                                        <span className="bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-violet-200 dark:border-violet-800">
+                                                            {job.department}
+                                                        </span>
+                                                        <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
+                                                            <Globe className="w-3 h-3 text-violet-500" /> {job.location}
+                                                        </div>
+                                                        <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
+                                                            <Clock className="w-3 h-3 text-violet-500" /> {job.type}
+                                                        </div>
+                                                    </div>
+                                                    <h3 className="text-3xl font-black text-zinc-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors mb-4 italic tracking-tight">
+                                                        {job.title}
+                                                    </h3>
+                                                    <p className="text-zinc-600 dark:text-zinc-400 font-bold leading-relaxed mb-8 max-w-2xl text-sm">
+                                                        {job.description}
+                                                    </p>
+                                                    <div className="flex flex-wrap gap-3">
+                                                        {job.tags.map(tag => (
+                                                            <span key={tag} className="text-[10px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-600 border border-zinc-100 dark:border-zinc-800 px-3 py-1 rounded-lg">
+                                                                {tag}
+                                                            </span>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                                                    {job.title}
-                                                </h3>
-                                            </div>
-                                            <div className="hidden md:block">
-                                                <div className="w-12 h-12 bg-zinc-50 dark:bg-zinc-800 rounded-full flex items-center justify-center group-hover:bg-violet-600 transition-colors duration-300">
-                                                    <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" />
+                                                <div className="hidden md:block">
+                                                    <div className="w-16 h-16 glass dark:glass-dark rounded-3xl flex items-center justify-center group-hover:bg-violet-600 transition-all duration-500 border border-zinc-100 dark:border-zinc-800 group-hover:border-violet-400 group-hover:-rotate-12">
+                                                        <ArrowRight className="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <p className="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
-                                            {job.description}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2">
-                                            {job.tags.map(tag => (
-                                                <span key={tag} className="bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-3 py-1 rounded-md text-sm font-medium border border-zinc-200 dark:border-zinc-700">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <div className="mt-8 md:hidden">
-                                            <Link to={`/careers/${job.id}`} className="block w-full text-center bg-violet-600 text-white font-bold py-3 rounded-xl">
-                                                Apply Now
-                                            </Link>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="text-center py-20 bg-zinc-50 dark:bg-zinc-900/50 rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800">
-                                <Briefcase className="w-16 h-16 text-zinc-300 dark:text-zinc-700 mx-auto mb-4" />
-                                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">No roles found</h3>
-                                <p className="text-zinc-500 dark:text-zinc-400">
-                                    Try adjusting your search filters or check back later.
-                                </p>
-                                <button
-                                    onClick={() => { setSearchTerm(''); setSelectedDepartment('All'); }}
-                                    className="mt-6 text-violet-600 dark:text-violet-400 font-bold hover:underline"
+                                        </motion.div>
+                                    </Link>
+                                ))
+                            ) : (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="text-center py-24 glass dark:glass-dark rounded-[2.5rem] border border-dashed border-zinc-200 dark:border-zinc-800"
                                 >
-                                    Clear Filters
-                                </button>
+                                    <Briefcase className="w-16 h-16 text-zinc-300 dark:text-zinc-700 mx-auto mb-6 opacity-20" />
+                                    <h3 className="text-xl font-black text-zinc-900 dark:text-white mb-2 uppercase tracking-tight italic">No directivs found</h3>
+                                    <p className="text-zinc-500 font-bold mb-8">System parameters yielded zero matches.</p>
+                                    <button
+                                        onClick={() => { setSearchTerm(''); setSelectedDepartment('All'); }}
+                                        className="text-violet-600 dark:text-violet-400 font-black text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity"
+                                    >
+                                        [ RESET FILTERS ]
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+
+                    {/* Perks Section Preview */}
+                    <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12">
+                        {[
+                            { title: 'Global Grid', desc: 'Sovereign remote operational paradigm.', icon: Globe },
+                            { title: 'Premium Yield', desc: 'Top-tier capital allocation strategy.', icon: DollarSign },
+                            { title: 'Evolution Fund', desc: 'Unrestricted growth potential stipend.', icon: Sparkles }
+                        ].map((perk, i) => (
+                            <div key={i} className="text-center group p-8 glass dark:glass-dark rounded-[2.5rem] border border-zinc-50 dark:border-zinc-900">
+                                <perk.icon className="w-8 h-8 text-violet-500 mx-auto mb-6 group-hover:scale-110 transition-transform" />
+                                <h4 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white mb-4">{perk.title}</h4>
+                                <p className="text-zinc-500 text-xs font-bold leading-relaxed">{perk.desc}</p>
                             </div>
-                        )}
-
-                        {/* Perks Section Preview */}
-                        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {[
-                                { title: 'Remote-First', desc: 'Work from anywhere in the world. We focus on output, not hours.' },
-                                { title: 'Competitive Pay', desc: 'Top-tier salary packages with equity options for every role.' },
-                                { title: 'Learning Budget', desc: '$2,000 annual stipend for courses, conferences, and books.' }
-                            ].map((perk, i) => (
-                                <div key={i} className="text-center p-6">
-                                    <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">{perk.title}</h4>
-                                    <p className="text-zinc-500 dark:text-zinc-400">{perk.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-
+                        ))}
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </div>
     );
 }

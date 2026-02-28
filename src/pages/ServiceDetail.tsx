@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Check, Code2, Database, Layout } from 'lucide-react';
 
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
+
 export default function ServiceDetail() {
     const { slug } = useParams();
 
@@ -22,7 +24,8 @@ export default function ServiceDetail() {
     return (
         <>
             <Helmet>
-                <title>{serviceTitle} - Agency</title>
+                <title>{serviceTitle} - {COMPANY_NAME}</title>
+                <meta name="description" content={`Deep dive into ${serviceTitle} at ${COMPANY_NAME}. High-fidelity software engineering for ambitious founders.`} />
             </Helmet>
 
             <section className="bg-zinc-50 dark:bg-zinc-950 pt-32 pb-20 transition-colors duration-300">

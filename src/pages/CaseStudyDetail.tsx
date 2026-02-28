@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 
+const COMPANY_NAME = import.meta.env.VITE_COMPANY_NAME || 'Zyentric';
+
 export default function CaseStudyDetail() {
     const { slug } = useParams();
     const title = slug ? slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'Case Study';
@@ -9,7 +11,8 @@ export default function CaseStudyDetail() {
     return (
         <>
             <Helmet>
-                <title>{title} - Case Study</title>
+                <title>{title} - Case Study | {COMPANY_NAME}</title>
+                <meta name="description" content={`A deep dive into how ${COMPANY_NAME} solved complex technical challenges for ${title}.`} />
             </Helmet>
 
             {/* Hero */}
