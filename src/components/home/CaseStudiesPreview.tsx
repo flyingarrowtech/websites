@@ -64,14 +64,14 @@ export default function CaseStudiesPreview() {
                 viewport={{ once: true, margin: "-100px" }}
                 variants={containerVariants}
             >
-                <motion.div variants={headerVariants} className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <motion.div variants={headerVariants} className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                     <div className="max-w-2xl">
-                        <span className="text-violet-600 dark:text-violet-400 font-semibold tracking-wide uppercase text-sm mb-2 block">Proven Results</span>
+                        <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase text-sm mb-2 block">Proven Results</span>
                         <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white">
                             We deliver impact, not just code.
                         </h2>
                     </div>
-                    <Link to="/case-studies" className="hidden md:inline-flex items-center text-violet-600 dark:text-violet-400 font-semibold hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
+                    <Link to="/case-studies" className="hidden md:inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
                         View All Case Studies <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </motion.div>
@@ -81,26 +81,26 @@ export default function CaseStudiesPreview() {
                         <Link
                             key={index}
                             to={`/case-studies/${study.id}`}
-                            className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:shadow-2xl dark:hover:shadow-violet-900/20 transition-all duration-300 hover:-translate-y-1 group block"
+                            className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:shadow-2xl dark:hover:shadow-blue-900/20 transition-all duration-300 hover:-translate-y-1 group block"
                         >
                             <div className="aspect-video overflow-hidden bg-zinc-200 dark:bg-zinc-800 relative">
-                                <div className="absolute inset-0 bg-violet-900/10 group-hover:bg-transparent transition-colors z-10" />
+                                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10" />
                                 <img
                                     src={study.image}
                                     alt={study.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute top-4 left-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur text-xs font-bold text-violet-600 dark:text-violet-400 px-3 py-1.5 rounded-full uppercase tracking-wider z-20 shadow-sm border border-zinc-100 dark:border-zinc-800">
+                                <div className="absolute top-4 left-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur text-xs font-bold text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full uppercase tracking-wider z-20 shadow-sm border border-zinc-100 dark:border-zinc-800">
                                     {study.category}
                                 </div>
                             </div>
                             <div className="p-8">
-                                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     {study.title}
                                 </h3>
                                 <div className="mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800">
                                     <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2">{study.metricLabel}</p>
-                                    <p className="text-2xl font-bold text-violet-600 dark:text-violet-400">{study.metric}</p>
+                                    <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{study.metric}</p>
                                 </div>
                             </div>
                         </Link>
@@ -108,7 +108,7 @@ export default function CaseStudiesPreview() {
                 </div>
 
                 <div className="mt-12 text-center md:hidden">
-                    <Link to="/case-studies" className="inline-flex items-center text-violet-600 dark:text-violet-400 font-semibold hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
+                    <Link to="/case-studies" className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
                         View All Case Studies <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>

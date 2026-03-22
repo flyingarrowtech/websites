@@ -56,7 +56,7 @@ export default class ErrorBoundary extends Component<Props, State> {
                             </p>
                             {this.state.error && (
                                 <details className="mt-4 text-left">
-                                    <summary className="cursor-pointer text-sm text-zinc-500 dark:text-zinc-500 hover:text-violet-600 dark:hover:text-violet-400">
+                                    <summary className="cursor-pointer text-sm text-zinc-500 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400">
                                         Technical details
                                     </summary>
                                     <pre className="mt-2 p-4 bg-zinc-100 dark:bg-zinc-900 rounded-lg text-xs text-red-600 dark:text-red-400 overflow-auto">
@@ -68,7 +68,7 @@ export default class ErrorBoundary extends Component<Props, State> {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
                                 onClick={this.handleReset}
-                                className="inline-flex items-center justify-center px-6 py-3 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700 transition-colors"
+                                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
                             >
                                 <RefreshCw className="w-5 h-5 mr-2" />
                                 Try Again

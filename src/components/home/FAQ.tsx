@@ -75,17 +75,17 @@ export default function FAQ() {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-violet-400 dark:hover:border-violet-600 shadow-sm hover:shadow-md dark:shadow-zinc-900/50"
+                            className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-400 dark:hover:border-blue-600 shadow-sm hover:shadow-md dark:shadow-zinc-900/50"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
                             >
-                                <span className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">{faq.question}</span>
+                                <span className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{faq.question}</span>
                                 {openIndex === index ? (
-                                    <ChevronUp className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                                    <ChevronUp className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                 ) : (
-                                    <ChevronDown className="w-5 h-5 text-zinc-400 group-hover:text-violet-500 transition-colors" />
+                                    <ChevronDown className="w-5 h-5 text-zinc-400 group-hover:text-blue-500 transition-colors" />
                                 )}
                             </button>
                             <AnimatePresence>

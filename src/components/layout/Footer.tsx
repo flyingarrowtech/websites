@@ -13,8 +13,8 @@ export default function Footer() {
     return (
         <footer className="bg-zinc-950 text-zinc-400 pt-24 pb-12 border-t border-zinc-900 overflow-hidden relative">
             {/* Background Accents */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-600/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container relative mx-auto px-4 md:px-6 z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
@@ -25,16 +25,16 @@ export default function Footer() {
                                 <img
                                     src="/logo.png"
                                     alt={`${COMPANY_NAME} Logo`}
-                                    className="h-14 md:h-16 w-auto object-contain filter drop-shadow-2xl shadow-violet-500/40"
+                                    className="h-14 md:h-16 w-auto object-contain filter drop-shadow-2xl shadow-blue-500/40"
                                     onError={(e) => {
                                         e.currentTarget.style.display = 'none';
                                         const parent = e.currentTarget.parentElement!;
-                                        parent.classList.add('w-14', 'h-14', 'bg-gradient-to-br', 'from-violet-600', 'to-fuchsia-600', 'flex', 'items-center', 'justify-center', 'text-white', 'font-black', 'text-2xl', 'rounded-xl');
+                                        parent.classList.add('w-14', 'h-14', 'bg-gradient-to-br', 'from-blue-600', 'to-green-600', 'flex', 'items-center', 'justify-center', 'text-white', 'font-black', 'text-2xl', 'rounded-xl');
                                         parent.innerHTML = COMPANY_NAME.charAt(0);
                                     }}
                                 />
                             </div>
-                            <span className="text-3xl font-black tracking-tighter text-white group-hover:text-violet-400 transition-colors">
+                            <span className="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors">
                                 {COMPANY_NAME}
                             </span>
                         </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
                                         href={social.href}
                                         whileHover={{ y: -3, scale: 1.1 }}
                                         target="_blank"
-                                        className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white transition-colors hover:border-violet-500/50"
+                                        className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white transition-colors hover:border-blue-500/50"
                                     >
                                         <Icon className="w-5 h-5" />
                                     </motion.a>
@@ -65,7 +65,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             {['About', 'Careers', 'Blog', 'Contact', 'Process', 'Request NDA'].map(link => (
                                 <li key={link}>
-                                    <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="text-sm font-bold hover:text-violet-400 transition-colors uppercase tracking-wider">{link}</Link>
+                                    <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="text-sm font-bold hover:text-blue-400 transition-colors uppercase tracking-wider">{link}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -77,7 +77,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             {['MVP Development', 'SaaS Scale-up', 'AI Integration', 'Book Call'].map(s => (
                                 <li key={s}>
-                                    <Link to={s === 'Book Call' ? '/book-call' : '/services'} className="text-sm font-bold hover:text-violet-400 transition-colors uppercase tracking-wider whitespace-nowrap">{s}</Link>
+                                    <Link to={s === 'Book Call' ? '/book-call' : '/services'} className="text-sm font-bold hover:text-blue-400 transition-colors uppercase tracking-wider whitespace-nowrap">{s}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -93,11 +93,11 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="Email address"
-                                className="flex-1 bg-zinc-900/50 border border-zinc-800 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-violet-500 transition-all font-bold text-sm"
+                                className="flex-1 bg-zinc-900/50 border border-zinc-800 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-blue-500 transition-all font-bold text-sm"
                             />
                             <button
                                 type="button"
-                                className="p-4 bg-violet-600 hover:bg-violet-700 text-white rounded-2xl transition-all shadow-xl shadow-violet-600/20"
+                                className="p-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl transition-all shadow-xl shadow-blue-600/20"
                                 aria-label="Subscribe"
                             >
                                 <ArrowRight className="w-6 h-6" />
@@ -115,7 +115,7 @@ export default function Footer() {
                         { icon: Star, label: 'Global Tier', path: '/about' }
                     ].map((item, i) => (
                         <Link key={i} to={item.path} className="flex flex-col items-center gap-3 text-center group">
-                            <item.icon className="w-6 h-6 text-violet-500 group-hover:scale-110 transition-transform" />
+                            <item.icon className="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
                             <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">{item.label}</span>
                         </Link>
                     ))}
@@ -127,7 +127,7 @@ export default function Footer() {
                             animate={{ rotate: 360 }}
                             transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
                         >
-                            <Sparkles className="w-4 h-4 text-violet-500" />
+                            <Sparkles className="w-4 h-4 text-blue-500" />
                         </motion.div>
                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600">
                             &copy; {currentYear} {COMPANY_NAME}. All parameters reserved.

@@ -30,7 +30,7 @@ export default function ServiceDetail() {
 
             <section className="bg-zinc-50 dark:bg-zinc-950 pt-32 pb-20 transition-colors duration-300">
                 <div className="container mx-auto px-4 md:px-6">
-                    <Link to="/services" className="inline-flex items-center text-zinc-500 dark:text-zinc-400 hover:text-violet-600 dark:hover:text-white mb-8 transition-colors">
+                    <Link to="/services" className="inline-flex items-center text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white mb-8 transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
                     </Link>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -80,7 +80,7 @@ export default function ServiceDetail() {
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {['Scalable Architecture', 'Clean, Documented Code', 'Automated Testing', 'CI/CD Pipelines'].map((item) => (
                                         <li key={item} className="flex items-center text-zinc-700 dark:text-zinc-300 bg-zinc-50 dark:bg-zinc-800 p-4 rounded-lg transition-colors">
-                                            <Check className="w-5 h-5 text-violet-600 dark:text-violet-400 mr-3" />
+                                            <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" />
                                             {item}
                                         </li>
                                     ))}
@@ -112,7 +112,7 @@ export default function ServiceDetail() {
                                 <p className="text-zinc-600 dark:text-zinc-400 mb-6">
                                     Book a free strategy call to discuss your {serviceTitle.toLowerCase()} needs.
                                 </p>
-                                <Link to="/contact" className="block w-full bg-violet-600 text-white text-center py-4 rounded-lg font-bold hover:bg-violet-700 transition-colors">
+                                <Link to="/contact" className="block w-full bg-blue-600 text-white text-center py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors">
                                     Book a Strategy Call
                                 </Link>
                             </div>

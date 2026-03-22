@@ -83,13 +83,13 @@ export default function Process() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-violet-200 dark:border-violet-800"
+                            className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-200 dark:border-blue-800"
                         >
                             <Sparkles className="w-3 h-3" />
                             Battle-Tested Framework
                         </motion.div>
                         <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tight">
-                            From Vision to <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600 font-black italic">Execution</span>
+                            From Vision to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500 font-black italic">Execution</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto font-medium leading-relaxed">
                             We bridge the gap between idea and scale using a high-fidelity agile methodology that prioritizes speed and ship quality.
@@ -98,7 +98,7 @@ export default function Process() {
 
                     <div className="max-w-5xl mx-auto space-y-16 relative">
                         {/* Connecting Line (Desktop) */}
-                        <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-violet-600/0 via-violet-600/30 to-violet-600/0 -translate-x-1/2" />
+                        <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-blue-600/0 via-blue-600/30 to-blue-600/0 -translate-x-1/2" />
 
                         {steps.map((step, index) => (
                             <div key={index} className={`process-step flex flex-col md:flex-row gap-8 md:gap-24 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
@@ -107,9 +107,9 @@ export default function Process() {
                                 <div className="flex-1 w-full md:w-auto text-center md:text-left">
                                     <motion.div
                                         whileHover={{ y: -5 }}
-                                        className="glass dark:glass-dark p-10 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-2xl shadow-violet-500/5 hover:border-violet-500/30 transition-all group"
+                                        className="glass dark:glass-dark p-10 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-2xl shadow-blue-500/5 hover:border-blue-500/30 transition-all group"
                                     >
-                                        <div className="text-6xl font-black text-zinc-900 dark:text-white opacity-5 mb-4 italic tracking-tighter group-hover:opacity-10 transition-opacity">{step.number}</div>
+                                        <div className="text-6xl font-black text-zinc-900 dark:text-white opacity-10 mb-4 italic tracking-tighter group-hover:opacity-10 transition-opacity">{step.number}</div>
                                         <h2 className="text-3xl font-black text-zinc-900 dark:text-white mb-4 tracking-tight">{step.title}</h2>
                                         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed font-medium">
                                             {step.description}
@@ -117,7 +117,7 @@ export default function Process() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {step.details.map((detail, i) => (
                                                 <div key={i} className="flex items-center text-xs font-bold text-zinc-500 dark:text-zinc-500 uppercase tracking-widest">
-                                                    <CheckCircle2 className="w-4 h-4 text-violet-600 mr-2 flex-shrink-0" />
+                                                    <CheckCircle2 className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" />
                                                     {detail}
                                                 </div>
                                             ))}
@@ -127,7 +127,7 @@ export default function Process() {
 
                                 {/* Center Marker (Desktop) */}
                                 <div className="hidden md:flex flex-col items-center justify-center w-16 relative z-10 h-full">
-                                    <div className="w-6 h-6 rounded-full bg-zinc-900 dark:bg-white border-4 border-violet-600 shadow-xl shadow-violet-500/40 transform group-hover:scale-125 transition-transform" />
+                                    <div className="w-6 h-6 rounded-full bg-zinc-900 dark:bg-white border-4 border-blue-600 shadow-xl shadow-blue-500/40 transform group-hover:scale-125 transition-transform" />
                                 </div>
 
                                 {/* Empty Side for Balance */}
@@ -143,10 +143,10 @@ export default function Process() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="mt-32 text-center relative z-10"
                     >
-                        <div className="absolute inset-0 bg-violet-600/5 blur-[120px] rounded-full pointer-events-none" />
+                        <div className="absolute inset-0 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
                         <Link
                             to="/contact"
-                            className="group inline-flex items-center justify-center px-12 py-5 text-lg font-black text-white transition-all bg-zinc-900 dark:bg-white dark:text-zinc-900 rounded-full hover:bg-violet-600 dark:hover:bg-violet-400 dark:hover:text-white hover:shadow-2xl hover:shadow-violet-600/20 active:scale-95"
+                            className="group inline-flex items-center justify-center px-12 py-5 text-lg font-black text-white transition-all bg-zinc-900 dark:bg-white dark:text-zinc-900 rounded-full hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white hover:shadow-2xl hover:shadow-blue-600/20 active:scale-95"
                         >
                             Start Your Roadmap
                             <ArrowRight className="w-6 h-6 ml-3 transition-transform group-hover:translate-x-2" />

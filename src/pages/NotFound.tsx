@@ -13,7 +13,7 @@ export default function NotFound() {
             </Helmet>
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-violet-600/5 blur-[120px] rounded-full" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-blue-600/5 blur-[120px] rounded-full" />
             </div>
 
             <motion.div
@@ -27,7 +27,7 @@ export default function NotFound() {
                     </h1>
                     <div className="absolute inset-0 flex items-center justify-center">
                         <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight italic">
-                            Lost in <span className="text-violet-600 dark:text-violet-400">Space.</span>
+                            Lost in <span className="text-blue-600 dark:text-blue-400">Space.</span>
                         </h2>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ export default function NotFound() {
 
                 <Link
                     to="/"
-                    className="group inline-flex items-center px-10 py-5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-xs uppercase tracking-widest rounded-full hover:bg-violet-600 dark:hover:bg-violet-400 dark:hover:text-white transition-all shadow-2xl hover:shadow-violet-600/20 active:scale-95"
+                    className="group inline-flex items-center px-10 py-5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-xs uppercase tracking-widest rounded-full hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all shadow-2xl hover:shadow-blue-600/20 active:scale-95"
                 >
                     <Home className="w-4 h-4 mr-3" />
                     Secure Re-entry

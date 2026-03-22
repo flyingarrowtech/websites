@@ -77,30 +77,30 @@ export default function Contact() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Contact Info */}
                         <div className="space-y-8">
-                            <div className="bg-violet-50 dark:bg-violet-900/20 p-8 rounded-2xl transition-colors">
-                                <h3 className="text-2xl font-bold text-violet-900 dark:text-violet-200 mb-6">Contact Information</h3>
+                            <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-2xl transition-colors">
+                                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-6">Contact Information</h3>
                                 <div className="space-y-6">
                                     <div className="flex items-start">
-                                        <Mail className="w-6 h-6 text-violet-600 dark:text-violet-400 mt-1 mr-4" />
+                                        <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1 mr-4" />
                                         <div>
                                             <p className="font-semibold text-zinc-900 dark:text-white">Email Us</p>
-                                            <a href={`mailto:zyentric@gmail.com`} className="text-zinc-600 dark:text-zinc-400 hover:text-violet-600 dark:hover:text-violet-400">
+                                            <a href={`mailto:zyentric@gmail.com`} className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
                                                 zyentric@gmail.com
                                             </a>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
-                                        <MapPin className="w-6 h-6 text-violet-600 dark:text-violet-400 mt-1 mr-4" />
+                                        <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1 mr-4" />
                                         <div>
                                             <p className="font-semibold text-zinc-900 dark:text-white">Office</p>
                                             <p className="text-zinc-600 dark:text-zinc-400 text-sm">Rajgarh, Mirzapur<br />Uttar Pradesh, India</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
-                                        <Phone className="w-6 h-6 text-violet-600 dark:text-violet-400 mt-1 mr-4" />
+                                        <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1 mr-4" />
                                         <div>
                                             <p className="font-semibold text-zinc-900 dark:text-white">Call Us</p>
-                                            <a href="tel:+919026960933" className="text-zinc-600 dark:text-zinc-400 hover:text-violet-600 dark:hover:text-violet-400">+91 9026 960 933</a>
+                                            <a href="tel:+919026960933" className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">+91 9026 960 933</a>
                                         </div>
                                     </div>
                                 </div>
@@ -109,9 +109,9 @@ export default function Contact() {
                             <div>
                                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">How we help?</h3>
                                 <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
-                                    <li className="flex items-center"><span className="w-2 h-2 bg-violet-600 dark:bg-violet-400 rounded-full mr-3"></span>Get a rough estimate on timeline and budget</li>
-                                    <li className="flex items-center"><span className="w-2 h-2 bg-violet-600 dark:bg-violet-400 rounded-full mr-3"></span>Discuss technical feasibility of your idea</li>
-                                    <li className="flex items-center"><span className="w-2 h-2 bg-violet-600 dark:bg-violet-400 rounded-full mr-3"></span>Plan your MVP and scaling strategy</li>
+                                    <li className="flex items-center"><span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></span>Get a rough estimate on timeline and budget</li>
+                                    <li className="flex items-center"><span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></span>Discuss technical feasibility of your idea</li>
+                                    <li className="flex items-center"><span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></span>Plan your MVP and scaling strategy</li>
                                 </ul>
                             </div>
                         </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+                                            className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -142,7 +142,7 @@ export default function Contact() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+                                            className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                                             placeholder="john@example.com"
                                         />
                                     </div>
@@ -156,7 +156,7 @@ export default function Contact() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+                                        className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                                         placeholder="Project Inquiry"
                                     />
                                 </div>
@@ -169,13 +169,13 @@ export default function Contact() {
                                         onChange={handleChange}
                                         required
                                         rows={4}
-                                        className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-violet-500 outline-none transition-all resize-none"
+                                        className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
                                         placeholder="Tell us about your project..."
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full md:w-auto px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-lg flex items-center justify-center transition-all group"
+                                    className="w-full md:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg flex items-center justify-center transition-all group"
                                 >
                                     Send Message
                                     <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

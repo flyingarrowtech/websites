@@ -24,7 +24,7 @@ export default function ThemeToggle() {
 
             {/* Moon Icon (Right) */}
             <div className={`z-10 flex items-center justify-center w-5 h-5 transition-all duration-300 ${theme === 'dark' ? 'opacity-100 scale-100' : 'opacity-40 scale-75'}`}>
-                <Moon className="w-3.5 h-3.5 text-violet-400" strokeWidth={2.5} />
+                <Moon className="w-3.5 h-3.5 text-blue-400" strokeWidth={2.5} />
             </div>
 
             {/* Sliding Thumb */}

@@ -9,21 +9,21 @@ const services = [
         icon: Rocket,
         title: 'MVP Development',
         description: 'Go from idea to market-ready product in weeks. We build the scalable foundation your startup needs to thrive.',
-        color: 'from-blue-500 to-violet-500'
+        color: 'from-blue-500 to-blue-500'
     },
     {
         id: 'saas-development',
         icon: Code2,
         title: 'SaaS Development',
         description: 'Full-cycle SaaS development with modern tech stacks. Multi-tenant architecture and seamless scaling.',
-        color: 'from-violet-500 to-fuchsia-500'
+        color: 'from-blue-500 to-green-500'
     },
     {
         id: 'ai-integration',
         icon: BrainCircuit,
         title: 'AI Automation',
         description: 'Integrate custom LLMs and AI agents into your business. Optimize workflows with intelligent automation.',
-        color: 'from-fuchsia-500 to-pink-500'
+        color: 'from-green-500 to-pink-500'
     },
     {
         id: 'dedicated-teams',
@@ -63,8 +63,8 @@ export default function ServicesSnapshot() {
     return (
         <section className="py-24 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden transition-colors duration-500">
             {/* Background Decor */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/5 blur-[100px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-fuchsia-500/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/5 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20">
@@ -72,12 +72,12 @@ export default function ServicesSnapshot() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-xs font-bold mb-6 tracking-widest uppercase"
+                        className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold mb-6 tracking-widest uppercase"
                     >
                         Our Expertise
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight">
-                        Everything you need to <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">scale</span>
+                        Everything you need to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500">scale</span>
                     </h2>
                     <p className="text-xl text-zinc-600 dark:text-zinc-400 font-medium">
                         Focused on velocity, quality, and results. We provide the technical leverage that founders dream of.
@@ -104,7 +104,7 @@ export default function ServicesSnapshot() {
                                 <service.icon className="w-8 h-8 text-white" />
                             </div>
 
-                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
@@ -112,7 +112,7 @@ export default function ServicesSnapshot() {
                             </p>
 
                             {/* Subtle Action Link */}
-                            <div className="mt-8 flex items-center text-xs font-bold text-violet-600 dark:text-violet-400 tracking-widest uppercase opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                            <div className="mt-8 flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 tracking-widest uppercase opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                                 View Details
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </div>

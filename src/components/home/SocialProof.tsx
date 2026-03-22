@@ -65,9 +65,9 @@ export default function SocialProof() {
                                 transition={{ delay: i * 0.05 }}
                                 className="group relative"
                             >
-                                <div className="p-4 rounded-2xl glass dark:glass-dark text-center transition-all duration-300 group-hover:border-violet-500/50 group-hover:shadow-lg group-hover:shadow-violet-500/10 group-hover:-translate-y-1">
+                                <div className="p-4 rounded-2xl glass dark:glass-dark text-center transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-lg group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
                                     <span className="block text-sm font-bold text-zinc-900 dark:text-white mb-1">{tech.name}</span>
-                                    <span className="block text-[10px] font-bold text-violet-600 dark:text-violet-400 uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">{tech.level}</span>
+                                    <span className="block text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">{tech.level}</span>
                                 </div>
                             </motion.div>
                         ))}

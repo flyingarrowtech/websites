@@ -28,7 +28,7 @@ export default function JobDetail() {
                 <div className="text-center">
                     <h2 className="text-3xl font-black text-zinc-900 dark:text-white mb-4 italic">Directive Not Found</h2>
                     <p className="text-zinc-500 mb-8">The requested role identifier is invalid or has been decommissioned.</p>
-                    <Link to="/careers" className="text-violet-600 font-black uppercase tracking-widest text-xs hover:opacity-70 transition-opacity">
+                    <Link to="/careers" className="text-blue-600 font-black uppercase tracking-widest text-xs hover:opacity-70 transition-opacity">
                         [ BACK TO HUB ]
                     </Link>
                 </div>
@@ -85,8 +85,8 @@ export default function JobDetail() {
             <LoadingOverlay isVisible={isSubmitting} message="Transmitting Directive..." />
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-violet-500/5 blur-[120px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-[50%] h-[50%] bg-fuchsia-500/5 blur-[120px] rounded-full" />
+                <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-blue-500/5 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-[50%] h-[50%] bg-green-500/5 blur-[120px] rounded-full" />
             </div>
 
             <div className="container relative mx-auto px-4 md:px-6 z-10">
@@ -95,7 +95,7 @@ export default function JobDetail() {
                     animate={{ opacity: 1, x: 0 }}
                     className="mb-12"
                 >
-                    <Link to="/careers" className="inline-flex items-center gap-2 text-zinc-500 hover:text-violet-600 transition-colors font-black text-[10px] uppercase tracking-widest">
+                    <Link to="/careers" className="inline-flex items-center gap-2 text-zinc-500 hover:text-blue-600 transition-colors font-black text-[10px] uppercase tracking-widest">
                         <ArrowLeft className="w-4 h-4" />
                         Back to Talent Hub
                     </Link>
@@ -114,14 +114,14 @@ export default function JobDetail() {
                             <div className="lg:col-span-7 space-y-12">
                                 <section>
                                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                                        <span className="bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-violet-200 dark:border-violet-800">
+                                        <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-blue-200 dark:border-blue-800">
                                             {job.department}
                                         </span>
                                         <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
-                                            <Globe className="w-3 h-3 text-violet-500" /> {job.location}
+                                            <Globe className="w-3 h-3 text-blue-500" /> {job.location}
                                         </div>
                                         <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
-                                            <Clock className="w-3 h-3 text-violet-500" /> {job.type}
+                                            <Clock className="w-3 h-3 text-blue-500" /> {job.type}
                                         </div>
                                     </div>
                                     <h1 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">
@@ -136,7 +136,7 @@ export default function JobDetail() {
 
                                 <section className="space-y-8">
                                     <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-400 flex items-center gap-3">
-                                        <Sparkles className="w-4 h-4 text-violet-500" />
+                                        <Sparkles className="w-4 h-4 text-blue-500" />
                                         Primary Responsibilities
                                     </h2>
                                     <ul className="space-y-6">
@@ -148,7 +148,7 @@ export default function JobDetail() {
                                                 transition={{ delay: idx * 0.1 }}
                                                 className="flex items-start gap-4 group"
                                             >
-                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-500 group-hover:scale-150 transition-transform" />
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 group-hover:scale-150 transition-transform" />
                                                 <span className="text-zinc-600 dark:text-zinc-400 font-bold leading-relaxed">{item}</span>
                                             </motion.li>
                                         ))}
@@ -157,7 +157,7 @@ export default function JobDetail() {
 
                                 <section className="space-y-8">
                                     <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-400 flex items-center gap-3">
-                                        <Zap className="w-4 h-4 text-violet-500" />
+                                        <Zap className="w-4 h-4 text-blue-500" />
                                         Operational Requirements
                                     </h2>
                                     <ul className="space-y-6">
@@ -169,7 +169,7 @@ export default function JobDetail() {
                                                 transition={{ delay: idx * 0.1 }}
                                                 className="flex items-start gap-4 group"
                                             >
-                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fuchsia-500 group-hover:scale-150 transition-transform" />
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 group-hover:scale-150 transition-transform" />
                                                 <span className="text-zinc-600 dark:text-zinc-400 font-bold leading-relaxed">{item}</span>
                                             </motion.li>
                                         ))}
@@ -179,7 +179,7 @@ export default function JobDetail() {
 
                             {/* Right Column: Application Form */}
                             <div className="mt-10 lg:col-span-5 relative">
-                                <div className="sticky top-40 glass dark:glass-dark border border-zinc-100 dark:border-zinc-800 rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-violet-500/5">
+                                <div className="sticky top-40 glass dark:glass-dark border border-zinc-100 dark:border-zinc-800 rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-blue-500/5">
                                     <div className="mb-10">
                                         <h2 className="text-2xl font-black text-zinc-900 dark:text-white mb-2 italic">Initiate Application</h2>
                                         <p className="text-sm text-zinc-500 font-bold italic lowercase tracking-tight">System ready for credential transmission.</p>
@@ -195,7 +195,7 @@ export default function JobDetail() {
                                                     name="fullName"
                                                     type="text"
                                                     placeholder="Enter full name"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                 />
                                             </div>
                                         </div>
@@ -210,7 +210,7 @@ export default function JobDetail() {
                                                         name="email"
                                                         type="email"
                                                         placeholder="Enter email address"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -224,7 +224,7 @@ export default function JobDetail() {
                                                         name="phone"
                                                         type="tel"
                                                         placeholder="+91 (000) 000-0000"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -240,7 +240,7 @@ export default function JobDetail() {
                                                         name="professionalLink"
                                                         type="url"
                                                         placeholder="LinkedIn URL"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -254,7 +254,7 @@ export default function JobDetail() {
                                                         name="githubLink"
                                                         type="url"
                                                         placeholder="GitHub Profile URL"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -268,7 +268,7 @@ export default function JobDetail() {
                                                     name="portfolioLink"
                                                     type="url"
                                                     placeholder="Personal website or Portfolio"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                 />
                                             </div>
                                         </div>
@@ -283,7 +283,7 @@ export default function JobDetail() {
                                                         name="highestQualification"
                                                         type="text"
                                                         placeholder="e.g. B.Tech CS"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -298,7 +298,7 @@ export default function JobDetail() {
                                                         type="number"
                                                         min="0"
                                                         placeholder="0"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -314,7 +314,7 @@ export default function JobDetail() {
                                                         name="currentSalary"
                                                         type="text"
                                                         placeholder="e.g. 12 LPA"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -328,7 +328,7 @@ export default function JobDetail() {
                                                         name="expectedSalary"
                                                         type="text"
                                                         placeholder="e.g. 18 LPA"
-                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                     />
                                                 </div>
                                             </div>
@@ -343,7 +343,7 @@ export default function JobDetail() {
                                                     name="noticePeriod"
                                                     type="text"
                                                     placeholder="e.g. Immediate / 30 Days"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                 />
                                             </div>
                                         </div>
@@ -357,7 +357,7 @@ export default function JobDetail() {
                                                     name="resumeLink"
                                                     type="url"
                                                     placeholder="Google Drive or Dropbox link"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                 />
                                             </div>
                                         </div>
@@ -370,7 +370,7 @@ export default function JobDetail() {
                                                     name="cvLink"
                                                     type="url"
                                                     placeholder="Portfolio / CV link (Optional)"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500"
                                                 />
                                             </div>
                                         </div>
@@ -385,7 +385,7 @@ export default function JobDetail() {
                                                     name="insight"
                                                     rows={4}
                                                     placeholder="Why is your architecture legendary?"
-                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-violet-500 text-sm font-bold dark:text-white placeholder-zinc-500 resize-none"
+                                                    className="w-full bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-blue-500 text-sm font-bold dark:text-white placeholder-zinc-500 resize-none"
                                                 />
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@ export default function JobDetail() {
                                         <button
                                             disabled={isSubmitting}
                                             type="submit"
-                                            className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-violet-500/20 hover:shadow-violet-500/40 active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+                                            className="w-full bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500 text-white py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                                         >
                                             {isSubmitting ? (
                                                 <motion.div
@@ -423,7 +423,7 @@ export default function JobDetail() {
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ type: "spring", damping: 12 }}
-                                className="w-32 h-32 bg-violet-600 rounded-full flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-violet-600/40"
+                                className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-blue-600/40"
                             >
                                 <CheckCircle2 className="w-16 h-16 text-white" />
                             </motion.div>
@@ -433,7 +433,7 @@ export default function JobDetail() {
                             </p>
                             <button
                                 onClick={() => navigate('/careers')}
-                                className="glass dark:glass-dark border border-zinc-200 dark:border-zinc-800 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] text-zinc-600 dark:text-zinc-300 hover:bg-violet-600 hover:text-white transition-all shadow-xl"
+                                className="glass dark:glass-dark border border-zinc-200 dark:border-zinc-800 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] text-zinc-600 dark:text-zinc-300 hover:bg-blue-600 hover:text-white transition-all shadow-xl"
                             >
                                 [ RETURN TO HUB ]
                             </button>

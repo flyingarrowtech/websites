@@ -23,7 +23,7 @@ export default function BookCall() {
                         </div>
 
                         <div className="p-12 text-center">
-                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 mb-8">
+                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-8">
                                 <MessageSquare className="w-10 h-10" />
                             </div>
                             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Ready to get started?</h2>
@@ -32,7 +32,7 @@ export default function BookCall() {
                             </p>
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-lg transition-all group"
+                                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all group"
                             >
                                 Contact Us to Schedule
                                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

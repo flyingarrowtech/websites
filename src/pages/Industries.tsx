@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const industries = [
     {
-        icon: <Landmark className="w-12 h-12 text-violet-600" />,
+        icon: <Landmark className="w-12 h-12 text-blue-600" />,
         title: 'FinTech',
         description: 'We build secure, compliant, and high-performance financial platforms. From payment gateways to trading algorithms, we handle the complexity.',
         features: ['PCI DSS Compliance', 'Real-time Analytics', 'Blockchain Integration'],
@@ -69,7 +69,7 @@ export default function Industries() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link to="/contact" className="text-violet-600 dark:text-violet-400 font-bold hover:underline">
+                                <Link to="/contact" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">
                                     View Solutions
                                 </Link>
                             </div>

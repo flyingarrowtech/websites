@@ -18,11 +18,11 @@ export default function CaseStudyDetail() {
             {/* Hero */}
             <section className="bg-zinc-50 dark:bg-zinc-950 pt-32 pb-20 transition-colors duration-300">
                 <div className="container mx-auto px-4 md:px-6">
-                    <Link to="/case-studies" className="inline-flex items-center text-zinc-500 dark:text-zinc-400 hover:text-violet-600 dark:hover:text-white mb-8 transition-colors">
+                    <Link to="/case-studies" className="inline-flex items-center text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white mb-8 transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Case Studies
                     </Link>
                     <div className="max-w-4xl">
-                        <span className="text-violet-600 dark:text-violet-400 font-semibold tracking-wide uppercase text-sm mb-4 block">SaaS Development</span>
+                        <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase text-sm mb-4 block">SaaS Development</span>
                         <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-8 leading-tight">
                             {title}: Scaling to 10k Users with Modern Architecture
                         </h1>
@@ -65,7 +65,7 @@ export default function CaseStudyDetail() {
                                 <ul className="space-y-2">
                                     {['Audit existing codebase', 'Design scalable schema', 'Migrate data in phases', 'Implement caching layers'].map(step => (
                                         <li key={step} className="flex items-center text-zinc-700 dark:text-zinc-300">
-                                            <CheckCircle className="w-5 h-5 text-violet-600 dark:text-violet-400 mr-3" /> {step}
+                                            <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" /> {step}
                                         </li>
                                     ))}
                                 </ul>
@@ -75,15 +75,15 @@ export default function CaseStudyDetail() {
                                 <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Key Results</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div>
-                                        <p className="text-4xl font-bold text-violet-600 dark:text-violet-400 mb-1">300%</p>
+                                        <p className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-1">300%</p>
                                         <p className="text-zinc-600 dark:text-zinc-400 font-medium">Faster Query Time</p>
                                     </div>
                                     <div>
-                                        <p className="text-4xl font-bold text-violet-600 dark:text-violet-400 mb-1">99.9%</p>
+                                        <p className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-1">99.9%</p>
                                         <p className="text-zinc-600 dark:text-zinc-400 font-medium">Uptime Guarantee</p>
                                     </div>
                                     <div>
-                                        <p className="text-4xl font-bold text-violet-600 dark:text-violet-400 mb-1">Zero</p>
+                                        <p className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-1">Zero</p>
                                         <p className="text-zinc-600 dark:text-zinc-400 font-medium">Data Loss</p>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@ export default function CaseStudyDetail() {
                                     <p className="text-zinc-400 mb-6">
                                         Let's discuss how we can help you achieve your technical goals.
                                     </p>
-                                    <Link to="/contact" className="block w-full bg-violet-600 text-center py-3 rounded-lg font-bold hover:bg-violet-700 transition-colors">
+                                    <Link to="/contact" className="block w-full bg-blue-600 text-center py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
                                         Book a Call
                                     </Link>
                                 </div>

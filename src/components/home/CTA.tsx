@@ -21,11 +21,11 @@ export default function CTA() {
             {/* Background Elements */}
             <motion.div
                 style={{ y: blob1Y, rotate: blob1Rotate }}
-                className="absolute top-0 right-0 w-1/3 h-full bg-violet-600/20 blur-3xl rounded-full translate-x-1/2"
+                className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/20 blur-3xl rounded-full translate-x-1/2"
             />
             <motion.div
                 style={{ y: blob2Y, rotate: blob2Rotate }}
-                className="absolute bottom-0 left-0 w-1/3 h-full bg-fuchsia-600/20 blur-3xl rounded-full -translate-x-1/2"
+                className="absolute bottom-0 left-0 w-1/3 h-full bg-green-600/20 blur-3xl rounded-full -translate-x-1/2"
             />
 
             <motion.div

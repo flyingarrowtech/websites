@@ -30,8 +30,8 @@ export default function Careers() {
             </Helmet>
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
-                <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-blue-500/5 blur-[100px] rounded-full" />
+                <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-green-500/5 blur-[100px] rounded-full" />
             </div>
 
             <div className="container relative mx-auto px-4 md:px-6 z-10">
@@ -40,24 +40,24 @@ export default function Careers() {
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-violet-200 dark:border-violet-800"
+                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-200 dark:border-blue-800"
                     >
                         <Zap className="w-3 h-3" />
                         Join the Elite
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">Engineers of <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Legend.</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">Engineers of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500">Legend.</span></h1>
                     <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed max-w-2xl mx-auto mb-12">
                         We don't just hire; we assemble visionaries. Help us architect the next generation of SaaS excellence.
                     </p>
 
                     {/* Search & Filter */}
-                    <div className="max-w-3xl mx-auto glass dark:glass-dark p-3 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row gap-3 shadow-2xl shadow-violet-500/10">
+                    <div className="max-w-3xl mx-auto glass dark:glass-dark p-3 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row gap-3 shadow-2xl shadow-blue-500/10">
                         <div className="flex-1 relative">
                             <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                             <input
                                 type="text"
                                 placeholder="Search roles or skills..."
-                                className="w-full pl-14 pr-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-violet-500 dark:text-white placeholder-zinc-500 transition-all font-bold text-sm"
+                                className="w-full pl-14 pr-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-blue-500 dark:text-white placeholder-zinc-500 transition-all font-bold text-sm"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -65,7 +65,7 @@ export default function Careers() {
                         <div className="relative md:w-56">
                             <Filter className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                             <select
-                                className="w-full pl-14 pr-10 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-violet-500 dark:text-white font-bold text-sm appearance-none cursor-pointer"
+                                className="w-full pl-14 pr-10 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-none rounded-[1.5rem] focus:ring-2 focus:ring-blue-500 dark:text-white font-bold text-sm appearance-none cursor-pointer"
                                 value={selectedDepartment}
                                 onChange={(e) => setSelectedDepartment(e.target.value)}
                             >
@@ -81,7 +81,7 @@ export default function Careers() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex justify-between items-center mb-10 px-4">
                         <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-500">
-                            Available Directives <span className="text-violet-500 ml-2">[{filteredJobs.length}]</span>
+                            Available Directives <span className="text-blue-500 ml-2">[{filteredJobs.length}]</span>
                         </h2>
                     </div>
 
@@ -95,22 +95,22 @@ export default function Careers() {
                                             animate={{ opacity: 1, x: 0 }}
                                             exit={{ opacity: 0, scale: 0.95 }}
                                             transition={{ delay: idx * 0.05 }}
-                                            className="my-10 group glass dark:glass-dark border border-zinc-100 dark:border-zinc-800 rounded-[2.5rem] p-8 md:p-10 hover:border-violet-500/30 hover:shadow-2xl hover:shadow-violet-500/5 transition-all duration-500 cursor-pointer relative"
+                                            className="my-10 group glass dark:glass-dark border border-zinc-100 dark:border-zinc-800 rounded-[2.5rem] p-8 md:p-10 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 cursor-pointer relative"
                                         >
                                             <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
                                                 <div className="flex-1">
                                                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                                                        <span className="bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-violet-200 dark:border-violet-800">
+                                                        <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-blue-200 dark:border-blue-800">
                                                             {job.department}
                                                         </span>
                                                         <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
-                                                            <Globe className="w-3 h-3 text-violet-500" /> {job.location}
+                                                            <Globe className="w-3 h-3 text-blue-500" /> {job.location}
                                                         </div>
                                                         <div className="flex items-center text-zinc-500 text-[10px] font-black uppercase tracking-widest gap-2">
-                                                            <Clock className="w-3 h-3 text-violet-500" /> {job.type}
+                                                            <Clock className="w-3 h-3 text-blue-500" /> {job.type}
                                                         </div>
                                                     </div>
-                                                    <h3 className="text-3xl font-black text-zinc-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors mb-4 italic tracking-tight">
+                                                    <h3 className="text-3xl font-black text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-4 italic tracking-tight">
                                                         {job.title}
                                                     </h3>
                                                     <p className="text-zinc-600 dark:text-zinc-400 font-bold leading-relaxed mb-8 max-w-2xl text-sm">
@@ -125,7 +125,7 @@ export default function Careers() {
                                                     </div>
                                                 </div>
                                                 <div className="hidden md:block">
-                                                    <div className="w-16 h-16 glass dark:glass-dark rounded-3xl flex items-center justify-center group-hover:bg-violet-600 transition-all duration-500 border border-zinc-100 dark:border-zinc-800 group-hover:border-violet-400 group-hover:-rotate-12">
+                                                    <div className="w-16 h-16 glass dark:glass-dark rounded-3xl flex items-center justify-center group-hover:bg-blue-600 transition-all duration-500 border border-zinc-100 dark:border-zinc-800 group-hover:border-blue-400 group-hover:-rotate-12">
                                                         <ArrowRight className="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors" />
                                                     </div>
                                                 </div>
@@ -144,7 +144,7 @@ export default function Careers() {
                                     <p className="text-zinc-500 font-bold mb-8">System parameters yielded zero matches.</p>
                                     <button
                                         onClick={() => { setSearchTerm(''); setSelectedDepartment('All'); }}
-                                        className="text-violet-600 dark:text-violet-400 font-black text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity"
+                                        className="text-blue-600 dark:text-blue-400 font-black text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity"
                                     >
                                         [ RESET FILTERS ]
                                     </button>
@@ -161,7 +161,7 @@ export default function Careers() {
                             { title: 'Evolution Fund', desc: 'Unrestricted growth potential stipend.', icon: Sparkles }
                         ].map((perk, i) => (
                             <div key={i} className="text-center group p-8 glass dark:glass-dark rounded-[2.5rem] border border-zinc-50 dark:border-zinc-900">
-                                <perk.icon className="w-8 h-8 text-violet-500 mx-auto mb-6 group-hover:scale-110 transition-transform" />
+                                <perk.icon className="w-8 h-8 text-blue-500 mx-auto mb-6 group-hover:scale-110 transition-transform" />
                                 <h4 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white mb-4">{perk.title}</h4>
                                 <p className="text-zinc-500 text-xs font-bold leading-relaxed">{perk.desc}</p>
                             </div>

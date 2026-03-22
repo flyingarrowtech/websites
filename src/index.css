@@ -7,33 +7,7 @@
 @theme {
   --font-sans: 'Outfit', sans-serif;
 
-  /* Custom Color Palette - Zinc / Violet / Fuchsia */
-  
-  /* Primary - Electric Violet */
-  --color-violet-50: #f5f3ff;
-  --color-violet-100: #ede9fe;
-  --color-violet-200: #ddd6fe;
-  --color-violet-300: #c4b5fd;
-  --color-violet-400: #a78bfa;
-  --color-violet-500: #8b5cf6;
-  --color-violet-600: #7c3aed;
-  --color-violet-700: #6d28d9;
-  --color-violet-800: #5b21b6;
-  --color-violet-900: #4c1d95;
-  --color-violet-950: #2e1065;
-
-  /* Accent - Vibrant Fuchsia/Pink */
-  --color-fuchsia-50: #fdf4ff;
-  --color-fuchsia-100: #fae8ff;
-  --color-fuchsia-200: #f5d0fe;
-  --color-fuchsia-300: #f0abfc;
-  --color-fuchsia-400: #e879f9;
-  --color-fuchsia-500: #d946ef;
-  --color-fuchsia-600: #c026d3;
-  --color-fuchsia-700: #a21caf;
-  --color-fuchsia-800: #86198f;
-  --color-fuchsia-900: #701a75;
-  --color-fuchsia-950: #4a044e;
+  /* The default Tailwind blue and green palettes will be used automatically */
 
   /* Neutral - Zinc */
   --color-zinc-50: #fafafa;
@@ -49,7 +23,7 @@
   --color-zinc-950: #09090b;
 
   /* Semantic Mappings */
-  --color-primary: var(--color-violet-600);
+  --color-primary: var(--color-blue-600);
   --color-primary-foreground: #ffffff;
   
   --color-surface: #ffffff;
@@ -69,7 +43,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
   }
 
   .animate-gradient-x {
@@ -98,14 +72,14 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 0px rgba(124, 58, 237, 0); }
-    50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+    0%, 100% { box-shadow: 0 0 0px rgba(37, 99, 235, 0); }
+    50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); }
   }
 }
 
 @layer base {
   body {
-    @apply font-sans antialiased text-zinc-900 bg-white dark:text-zinc-50 dark:bg-zinc-950 transition-colors duration-300 selection:bg-violet-500/30;
+    @apply font-sans antialiased text-zinc-900 bg-white dark:text-zinc-50 dark:bg-zinc-950 transition-colors duration-300 selection:bg-blue-500/30;
   }
 
   /* Custom Scrollbar for Webkit */

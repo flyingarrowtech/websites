@@ -14,17 +14,17 @@ export default function ThankYou() {
             </Helmet>
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-blue-500/5 blur-[100px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-green-500/5 blur-[100px] rounded-full" />
             </div>
 
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="max-w-md w-full glass dark:glass-dark rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 p-10 text-center relative z-10 shadow-2xl shadow-violet-500/5"
+                className="max-w-md w-full glass dark:glass-dark rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 p-10 text-center relative z-10 shadow-2xl shadow-blue-500/5"
             >
-                <div className="w-20 h-20 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                    <CheckCircle2 className="w-10 h-10 text-violet-600 dark:text-violet-400" />
+                <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+                    <CheckCircle2 className="w-10 h-10 text-blue-600 dark:text-blue-400" />
                 </div>
 
                 <h1 className="text-4xl font-black text-zinc-900 dark:text-white mb-4 tracking-tight italic">Message Sent.</h1>
@@ -35,14 +35,14 @@ export default function ThankYou() {
                 <div className="space-y-4">
                     <Link
                         to="/"
-                        className="group flex items-center justify-center w-full py-5 px-6 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-violet-600 dark:hover:bg-violet-400 dark:hover:text-white transition-all shadow-xl hover:shadow-violet-600/20 active:scale-95"
+                        className="group flex items-center justify-center w-full py-5 px-6 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all shadow-xl hover:shadow-blue-600/20 active:scale-95"
                     >
                         Return to Hub
                         <ArrowLeft className="w-4 h-4 ml-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     </Link>
                     <Link
                         to="/blog"
-                        className="group flex items-center justify-center w-full py-5 px-6 glass dark:glass-dark border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white font-black text-xs uppercase tracking-widest rounded-2xl hover:border-violet-500/50 transition-all"
+                        className="group flex items-center justify-center w-full py-5 px-6 glass dark:glass-dark border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white font-black text-xs uppercase tracking-widest rounded-2xl hover:border-blue-500/50 transition-all"
                     >
                         Explore Research
                         <ArrowRight className="w-4 h-4 ml-3 transition-transform group-hover:translate-x-1" />

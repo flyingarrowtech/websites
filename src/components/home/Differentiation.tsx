@@ -28,7 +28,7 @@ export default function Differentiation() {
                         Founder Choice
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight">
-                        Why founders <span className="text-violet-600">choose us</span>
+                        Why founders <span className="text-blue-600">choose us</span>
                     </h2>
                     <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-medium">
                         We provide agency-grade quality with the speed and cost-effectiveness of an elite distributed team.
@@ -41,7 +41,8 @@ export default function Differentiation() {
                         <div className="hidden md:block pb-6">
                             <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Key Features</span>
                         </div>
-                        <div className="bg-violet-600 rounded-t-3xl p-6 text-center shadow-xl shadow-violet-500/20 relative overflow-hidden group">
+                        <div className="block md:hidden pb-6"></div>
+                        <div className="bg-blue-600 rounded-t-3xl p-6 text-center shadow-xl shadow-blue-500/20 relative overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             <span className="relative text-lg font-black text-white italic tracking-tighter">{COMPANY_NAME}</span>
                         </div>
@@ -72,8 +73,8 @@ export default function Differentiation() {
                                 </div>
 
                                 {/* Us */}
-                                <div className="p-4 md:p-6 rounded-2xl bg-violet-50 dark:bg-violet-900/20 border border-violet-100 dark:border-violet-800 flex justify-center group-hover:bg-violet-100 dark:group-hover:bg-violet-900/30 transition-colors shadow-sm">
-                                    <CheckCircle2 className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                                <div className="p-4 md:p-6 rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 flex justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors shadow-sm">
+                                    <CheckCircle2 className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                                 </div>
 
                                 {/* Others (Desktop) */}

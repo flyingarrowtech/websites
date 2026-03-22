@@ -16,8 +16,8 @@ export default function Pricing() {
             {/* Header Section */}
             <section className="relative pt-40 pb-20 bg-zinc-50 dark:bg-zinc-950/50">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
-                    <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+                    <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-blue-500/5 blur-[100px] rounded-full" />
+                    <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-green-500/5 blur-[100px] rounded-full" />
                 </div>
 
                 <div className="container relative mx-auto px-4 md:px-6 text-center z-10">
@@ -30,7 +30,7 @@ export default function Pricing() {
                         Transparent Engagement
                     </motion.div>
                     <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tight">
-                        Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600 font-black">ROI</span>
+                        Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500 font-black">ROI</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto font-medium leading-relaxed">
                         Simple, performance-driven pricing models. No hidden fees, no complexity. Just elite engineering.
@@ -47,9 +47,9 @@ export default function Pricing() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-violet-500/30 transition-all group relative overflow-hidden"
+                            className="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-blue-500/30 transition-all group relative overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:bg-violet-500/20 transition-colors" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:bg-blue-500/20 transition-colors" />
                             <div className="relative mb-8">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-900 dark:text-white mb-6">
                                     <Zap className="w-6 h-6" />
@@ -70,7 +70,7 @@ export default function Pricing() {
                             <ul className="space-y-4">
                                 {['Fixed timeline & budget', 'Clear deliverables', 'PM included', '30-day bug support'].map(f => (
                                     <li key={f} className="flex items-center text-zinc-600 dark:text-zinc-300 font-bold text-xs uppercase tracking-wide">
-                                        <Check className="w-4 h-4 text-violet-600 mr-3 shrink-0" /> {f}
+                                        <Check className="w-4 h-4 text-blue-600 mr-3 shrink-0" /> {f}
                                     </li>
                                 ))}
                             </ul>
@@ -81,9 +81,9 @@ export default function Pricing() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-3xl bg-zinc-900 dark:bg-white border-4 border-violet-600 relative md:-translate-y-8 shadow-2xl shadow-violet-600/20 z-20 group"
+                            className="p-8 rounded-3xl bg-zinc-900 dark:bg-white border-4 border-blue-600 relative md:-translate-y-8 shadow-2xl shadow-blue-600/20 z-20 group"
                         >
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-violet-600 text-white px-6 py-2 rounded-b-2xl text-[10px] font-black uppercase tracking-widest">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-b-2xl text-[10px] font-black uppercase tracking-widest">
                                 Most Popular
                             </div>
                             <div className="relative mb-8 mt-4">
@@ -99,14 +99,14 @@ export default function Pricing() {
                                 <span className="text-sm font-bold text-zinc-400 dark:text-zinc-500 block mt-1 uppercase tracking-widest">per mo / engineer</span>
                             </div>
 
-                            <Link to="/contact" className="block w-full py-4 px-6 bg-violet-600 text-white font-black text-sm uppercase tracking-widest text-center rounded-2xl hover:bg-violet-700 transition-all mb-10 shadow-xl shadow-violet-600/40 group-hover:scale-105">
+                            <Link to="/contact" className="block w-full py-4 px-6 bg-blue-600 text-white font-black text-sm uppercase tracking-widest text-center rounded-2xl hover:bg-blue-700 transition-all mb-10 shadow-xl shadow-blue-600/40 group-hover:scale-105">
                                 Start Scaling
                             </Link>
 
                             <ul className="space-y-4">
                                 {['Dedicated senior devs', 'Flex up/down monthly', 'Direct Slack access', 'Architect oversight'].map(f => (
                                     <li key={f} className="flex items-center text-zinc-300 dark:text-zinc-600 font-bold text-xs uppercase tracking-wide">
-                                        <Check className="w-4 h-4 text-violet-600 mr-3 shrink-0" /> {f}
+                                        <Check className="w-4 h-4 text-blue-600 mr-3 shrink-0" /> {f}
                                     </li>
                                 ))}
                             </ul>
@@ -117,9 +117,9 @@ export default function Pricing() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-violet-500/30 transition-all group relative overflow-hidden"
+                            className="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-blue-500/30 transition-all group relative overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:bg-violet-500/20 transition-colors" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:bg-blue-500/20 transition-colors" />
                             <div className="relative mb-8">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-900 dark:text-white mb-6">
                                     <ShieldCheck className="w-6 h-6" />
@@ -140,7 +140,7 @@ export default function Pricing() {
                             <ul className="space-y-4">
                                 {['Cross-functional pod', 'QA & DevOps included', 'SLA guaranteed', '24/7 Support'].map(f => (
                                     <li key={f} className="flex items-center text-zinc-600 dark:text-zinc-300 font-bold text-xs uppercase tracking-wide">
-                                        <Check className="w-4 h-4 text-violet-600 mr-3 shrink-0" /> {f}
+                                        <Check className="w-4 h-4 text-blue-600 mr-3 shrink-0" /> {f}
                                     </li>
                                 ))}
                             </ul>
@@ -153,7 +153,7 @@ export default function Pricing() {
                         <p className="text-zinc-600 dark:text-zinc-400 font-medium mb-8">
                             Pricing depends on tech complexity and urgency. We specialize in high-leverage engineering that actually saves you money by avoiding technical debt.
                         </p>
-                        <Link to="/ faq" className="text-violet-600 dark:text-violet-400 font-black text-sm uppercase tracking-widest hover:underline inline-flex items-center">
+                        <Link to="/ faq" className="text-blue-600 dark:text-blue-400 font-black text-sm uppercase tracking-widest hover:underline inline-flex items-center">
                             Read Pricing FAQ <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </div>

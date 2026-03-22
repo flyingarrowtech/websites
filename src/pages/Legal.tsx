@@ -33,9 +33,9 @@ export default function Legal() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="glass dark:glass-dark p-8 md:p-12 rounded-3xl border border-zinc-100 dark:border-zinc-800 prose prose-zinc dark:prose-invert max-w-none shadow-2xl shadow-violet-500/5"
+                    className="glass dark:glass-dark p-8 md:p-12 rounded-3xl border border-zinc-100 dark:border-zinc-800 prose prose-zinc dark:prose-invert max-w-none shadow-2xl shadow-blue-500/5"
                 >
-                    <p className="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest mb-10">
+                    <p className="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-10">
                         Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     </p>
                     <p className="text-lg font-medium">

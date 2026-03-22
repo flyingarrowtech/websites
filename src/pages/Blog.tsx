@@ -70,8 +70,8 @@ export default function Blog() {
             </Helmet>
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
-                <div className="absolute top-1/2 left-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-blue-500/5 blur-[100px] rounded-full" />
+                <div className="absolute top-1/2 left-0 w-[40%] h-[40%] bg-green-500/5 blur-[100px] rounded-full" />
             </div>
 
             <div className="container relative mx-auto px-4 md:px-6 z-10">
@@ -79,12 +79,12 @@ export default function Blog() {
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-violet-200 dark:border-violet-800"
+                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-200 dark:border-blue-800"
                     >
                         <Sparkles className="w-3 h-3" />
                         Engineering Intelligence
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Insights</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter italic">Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500">Insights</span></h1>
                     <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed max-w-2xl mx-auto">
                         High-fidelity research and tactical field notes for SaaS founders and technical leaders.
                     </p>
@@ -98,7 +98,7 @@ export default function Blog() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="group glass dark:glass-dark rounded-[2.5rem] overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-violet-500/30 transition-all duration-500 flex flex-col h-full shadow-2xl shadow-violet-500/5"
+                            className="group glass dark:glass-dark rounded-[2.5rem] overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-blue-500/30 transition-all duration-500 flex flex-col h-full shadow-2xl shadow-blue-500/5"
                         >
                             <div className="h-64 overflow-hidden relative">
                                 <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors z-10" />
@@ -108,7 +108,7 @@ export default function Blog() {
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute top-6 left-6 z-20">
-                                    <div className="bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl text-[10px] font-black text-violet-600 dark:text-white px-4 py-2 rounded-2xl uppercase tracking-[0.2em] border border-white/20 shadow-xl">
+                                    <div className="bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl text-[10px] font-black text-blue-600 dark:text-white px-4 py-2 rounded-2xl uppercase tracking-[0.2em] border border-white/20 shadow-xl">
                                         {post.category}
                                     </div>
                                 </div>
@@ -120,14 +120,14 @@ export default function Blog() {
                                     <span className="mx-3 opacity-30">|</span>
                                     <span>{post.readTime}</span>
                                 </div>
-                                <h3 className="text-2xl font-black text-zinc-900 dark:text-white mb-4 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-2 italic tracking-tight">
+                                <h3 className="text-2xl font-black text-zinc-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 italic tracking-tight">
                                     {post.title}
                                 </h3>
                                 <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-8 line-clamp-3 leading-relaxed font-bold">
                                     {post.excerpt}
                                 </p>
                                 <div className="mt-auto pt-6 border-t border-zinc-100 dark:border-zinc-800/50 flex items-center justify-between">
-                                    <a href="#" className="inline-flex items-center text-zinc-900 dark:text-white font-black text-xs uppercase tracking-widest hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+                                    <a href="#" className="inline-flex items-center text-zinc-900 dark:text-white font-black text-xs uppercase tracking-widest hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                         Open Report <ArrowRight className="w-4 h-4 ml-3 transform group-hover:translate-x-2 transition-transform" />
                                     </a>
                                     <Tag className="w-4 h-4 text-zinc-300 dark:text-zinc-800" />

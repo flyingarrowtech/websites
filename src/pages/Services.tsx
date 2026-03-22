@@ -13,7 +13,7 @@ const services = [
         description: 'Launch your startup in weeks, not months. We focus on core value propositions to validate your idea fast and efficiently.',
         features: ['Rapid Prototyping', 'User-Centric Design', 'Scalable Architecture', 'Go-to-Market Strategy'],
         image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop',
-        color: 'from-blue-600 to-violet-600'
+        color: 'from-blue-600 to-blue-600'
     },
     {
         id: 'saas-development',
@@ -22,7 +22,7 @@ const services = [
         description: 'Enterprise-grade SaaS platforms built for extreme scale, security, and world-class performance.',
         features: ['Multi-tenant Architecture', 'API-First Development', 'Cloud Infrastructure', 'Payment Integration'],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
-        color: 'from-violet-600 to-fuchsia-600'
+        color: 'from-blue-600 via-cyan-400 to-green-500'
     },
     {
         id: 'ai-integration',
@@ -31,7 +31,7 @@ const services = [
         description: 'Leverage the power of LLMs and custom AI agents to automate complex workflows and 10x your output.',
         features: ['Custom AI Agents', 'LLM Integration', 'Process Automation', 'Smart Analytics'],
         image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
-        color: 'from-fuchsia-600 to-pink-600'
+        color: 'from-green-600 to-pink-600'
     },
     {
         id: 'dedicated-teams',
@@ -73,20 +73,20 @@ export default function Services() {
             {/* Header Section */}
             <section className="relative pt-40 pb-20 bg-zinc-50 dark:bg-zinc-950/50">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-violet-500/5 blur-[100px] rounded-full" />
-                    <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-fuchsia-500/5 blur-[100px] rounded-full" />
+                    <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-blue-500/5 blur-[100px] rounded-full" />
+                    <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-green-500/5 blur-[100px] rounded-full" />
                 </div>
 
                 <div className="container relative mx-auto px-4 md:px-6 text-center z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-violet-200 dark:border-violet-800"
+                        className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-200 dark:border-blue-800"
                     >
                         Capabilities
                     </motion.div>
                     <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-white mb-8 tracking-tight">
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Expertise</span>
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500">Expertise</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto font-medium leading-relaxed">
                         Precision engineering for the most ambitious founders. We turn complex technical challenges into competitive advantages.
@@ -108,7 +108,7 @@ export default function Services() {
                                 className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
                             >
                                 <div className="flex-1 w-full">
-                                    <div className={`mb-8 p-5 rounded-2xl bg-gradient-to-br ${service.color} w-fit shadow-2xl shadow-violet-500/20`}>
+                                    <div className={`mb-8 p-5 rounded-2xl bg-gradient-to-br ${service.color} w-fit shadow-2xl shadow-blue-500/20`}>
                                         {service.icon}
                                     </div>
                                     <h2 className="text-4xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight">{service.title}</h2>
@@ -118,8 +118,8 @@ export default function Services() {
                                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                                         {service.features.map((feature) => (
                                             <li key={feature} className="flex items-center text-zinc-700 dark:text-zinc-200 font-bold text-sm">
-                                                <div className="w-6 h-6 rounded-full bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center mr-3 flex-shrink-0">
-                                                    <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                                                <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                                                 </div>
                                                 {feature}
                                             </li>
@@ -128,14 +128,14 @@ export default function Services() {
                                     <div className="flex flex-wrap gap-4">
                                         <Link
                                             to={`/services/${service.id}`}
-                                            className="group inline-flex items-center px-8 py-4 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-sm uppercase tracking-widest transition-all hover:bg-violet-600 dark:hover:bg-violet-400 dark:hover:text-white hover:shadow-xl hover:shadow-violet-500/20"
+                                            className="group inline-flex items-center px-8 py-4 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-sm uppercase tracking-widest transition-all hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white hover:shadow-xl hover:shadow-blue-500/20"
                                         >
                                             Explore Solutions
                                             <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                                         </Link>
                                         <Link
                                             to="/contact"
-                                            className="group inline-flex items-center px-8 py-4 rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-black text-sm uppercase tracking-widest transition-all hover:border-violet-500 hover:text-violet-600"
+                                            className="group inline-flex items-center px-8 py-4 rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-black text-sm uppercase tracking-widest transition-all hover:border-blue-500 hover:text-blue-600"
                                         >
                                             Inquire Now
                                         </Link>
@@ -159,7 +159,7 @@ export default function Services() {
 
             {/* Bottom CTA */}
             <section className="py-24 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-fuchsia-700" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-green-700" />
                 <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-1/2" />
                 <div className="container relative mx-auto px-4 md:px-6 text-center z-10">
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight">
@@ -170,7 +170,7 @@ export default function Services() {
                         className="inline-flex items-center px-10 py-5 bg-white text-zinc-900 rounded-full font-black text-lg uppercase tracking-widest transition-all hover:scale-110 hover:shadow-2xl active:scale-95 group"
                     >
                         Get Free Consultation
-                        <Sparkles className="w-6 h-6 ml-3 text-violet-600 group-hover:rotate-12 transition-transform" />
+                        <Sparkles className="w-6 h-6 ml-3 text-blue-600 group-hover:rotate-12 transition-transform" />
                     </Link>
                 </div>
             </section>

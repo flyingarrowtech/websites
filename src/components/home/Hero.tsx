@@ -34,7 +34,7 @@ export default function Hero() {
                         y: [0, -50, 0]
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-violet-500/20 blur-[120px] rounded-full"
+                    className="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-500/20 blur-[120px] rounded-full"
                 />
                 <motion.div
                     animate={{
@@ -44,7 +44,7 @@ export default function Hero() {
                         y: [0, 50, 0]
                     }}
                     transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-fuchsia-500/20 blur-[120px] rounded-full"
+                    className="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-green-500/20 blur-[120px] rounded-full"
                 />
             </div>
 
@@ -55,11 +55,11 @@ export default function Hero() {
                         variants={itemVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 py-2 px-5 rounded-full glass dark:glass-dark text-violet-600 dark:text-violet-400 text-sm font-bold mb-8 border border-violet-100 dark:border-violet-900/30 shadow-xl shadow-violet-500/5 group cursor-default"
+                        className="inline-flex items-center gap-2 py-2 px-5 rounded-full glass dark:glass-dark text-blue-600 dark:text-blue-400 text-sm font-bold mb-8 border border-blue-100 dark:border-blue-900/30 shadow-xl shadow-blue-500/5 group cursor-default"
                     >
                         <Sparkles className="w-4 h-4 animate-pulse" />
                         <span className="tracking-wide uppercase text-[10px]">Premium Software Engineering</span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-ping"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></div>
                     </motion.div>
 
                     <motion.h1
@@ -69,7 +69,7 @@ export default function Hero() {
                         className="text-4xl sm:text-6xl md:text-8xl font-black text-zinc-900 dark:text-white tracking-tight mb-8 leading-[1.05]"
                     >
                         Build Your <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 animate-gradient-x bg-[length:200%_auto] text-glow">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500 animate-gradient-x bg-[length:200%_auto] text-glow">
                             Digital Empire
                         </span>
                     </motion.h1>
@@ -91,7 +91,7 @@ export default function Hero() {
                     >
                         <Link
                             to="/contact"
-                            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white transition-all rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] active:scale-95 group"
+                            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white transition-all rounded-2xl bg-gradient-to-r from-blue-600 via-cyan-400 to-green-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(37, 99, 235,0.4)] active:scale-95 group"
                         >
                             Start Your Journey
                             <Calendar className="w-5 h-5 ml-3 group-hover:rotate-12 transition-transform" />
@@ -119,16 +119,16 @@ export default function Hero() {
                     animate={{ y: [0, 8, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >
-                    <ChevronDown className="w-6 h-6 text-violet-500" />
+                    <ChevronDown className="w-6 h-6 text-blue-500" />
                 </motion.div>
             </motion.div>
 
             {/* Side Floating Element Decor (Only Desktop) */}
             <div className="absolute top-1/2 -right-40 -translate-y-1/2 hidden xl:block w-96 h-96 animate-float opacity-50 pointer-events-none">
-                <div className="w-full h-full rounded-2xl border-2 border-dashed border-violet-500/20 rotate-12 scale-150" />
+                <div className="w-full h-full rounded-2xl border-2 border-dashed border-blue-500/20 rotate-12 scale-150" />
             </div>
             <div className="absolute top-1/2 -left-40 -translate-y-1/2 hidden xl:block w-96 h-96 animate-float opacity-50 pointer-events-none" style={{ animationDelay: '1s' }}>
-                <div className="w-full h-full rounded-full border-2 border-dashed border-fuchsia-500/20 -rotate-12 scale-150" />
+                <div className="w-full h-full rounded-full border-2 border-dashed border-green-500/20 -rotate-12 scale-150" />
             </div>
         </section>
     );

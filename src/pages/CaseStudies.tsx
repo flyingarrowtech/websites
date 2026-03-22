@@ -70,11 +70,11 @@ export default function CaseStudies() {
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                                    <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-xs font-bold text-violet-600 uppercase tracking-wider">
+                                    <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-xs font-bold text-blue-600 uppercase tracking-wider">
                                         {study.category}
                                     </div>
                                 </div>
-                                <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3 flex items-center group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                                <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3 flex items-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     {study.title}
                                     <ArrowUpRight className="w-5 h-5 ml-2 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                                 </h2>
@@ -102,7 +102,7 @@ export default function CaseStudies() {
                     <h2 className="text-3xl font-bold text-white mb-6">Have a similar project in mind?</h2>
                     <Link
                         to="/contact"
-                        className="inline-block bg-violet-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-violet-700 transition-colors"
+                        className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors"
                     >
                         Let's Discuss It
                     </Link>

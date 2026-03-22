@@ -26,14 +26,14 @@ export default function LoadingOverlay({ isVisible, message = "Transmitting Cred
                             <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                                className="absolute inset-0 border-4 border-violet-500/20 rounded-full"
+                                className="absolute inset-0 border-4 border-blue-500/20 rounded-full"
                             />
                             <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                                className="absolute inset-0 border-4 border-violet-500 rounded-full border-t-transparent"
+                                className="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent"
                             />
-                            <Loader2 className="absolute inset-0 m-auto w-8 h-8 text-violet-400 animate-pulse" />
+                            <Loader2 className="absolute inset-0 m-auto w-8 h-8 text-blue-400 animate-pulse" />
                         </div>
 
                         <motion.h3
